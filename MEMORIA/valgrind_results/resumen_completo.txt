@@ -1,0 +1,20 @@
+=== ANÁLISIS VALGRIND - LIBRERÍA ASTRODYNAMICA ===
+Fecha: Thu Jun 26 22:55:20 CST 2025
+Sistema: Linux DESKTOP-C48DFMU 5.15.167.4-microsoft-standard-WSL2 #1 SMP Tue Nov 5 00:21:55 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+
+=== MEMORIA - PROGRAMA PRINCIPAL ===
+==331216== 16 bytes in 1 blocks are indirectly lost in loss record 1 of 4
+==331216== 48 bytes in 1 blocks are indirectly lost in loss record 2 of 4
+==331216== 48 bytes in 6 blocks are indirectly lost in loss record 3 of 4
+==331216== 176 (64 direct, 112 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 4
+==331216==    definitely lost: 64 bytes in 1 blocks
+==331216==    indirectly lost: 112 bytes in 8 blocks
+==331216==      possibly lost: 0 bytes in 0 blocks
+==331216==    still reachable: 0 bytes in 0 blocks
+==331216== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+=== MEMORIA - TESTS UNITARIOS ===
+
+=== RENDIMIENTO - TESTS UNITARIOS ===
+
+=== CACHE - TESTS UNITARIOS ===

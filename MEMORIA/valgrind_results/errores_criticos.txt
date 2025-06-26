@@ -1,0 +1,7 @@
+=== ERRORES CRÍTICOS ===
+MAIN:
+==331216== LEAK SUMMARY:
+==331216== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+TESTS:
+No se encontraron errores críticos en Tests

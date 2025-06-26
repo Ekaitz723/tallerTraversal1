@@ -1,0 +1,46 @@
+\markdownRendererDocumentBegin
+\markdownRendererSectionBegin
+\markdownRendererHeadingThree{Informe de Análisis del Proyecto con Cppcheck}\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFour{Hallazgos críticos:}\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{doubleFree en hgibbs.cpp}: Se detectó un problema grave de liberación doble de memoria en las líneas 83 y 105, donde la variable \markdownRendererCodeSpan{v2} es liberada dos veces. Este tipo de error puede causar comportamiento indefinido y crashes en tiempo de ejecución.\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Acción tomada}: Se ha decidido ignorar temporalmente debido a que \markdownRendererCodeSpan{v2} se utiliza como "puntero recipiente" con llamadas a \markdownRendererCodeSpan{free()} controladas en los test.\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Riesgo}: Alto - Puede causar corrupción de memoria y crashes.\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Hallazgos de estilo y optimización}\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFive{Problemas de Const}\markdownRendererInterblockSeparator
+{}Se identificaron múltiples oportunidades para mejorar la inmutabilidad del código:\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{constParameter} (Cheb3D.cpp:8): Parámetros de array que pueden declararse como const\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{constVariable} (EKF\markdownRendererUnderscore{}GEOS3.cpp:386): Array \markdownRendererCodeSpan{Y\markdownRendererUnderscore{}true} puede ser const \markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{constVariablePointer} (EKF\markdownRendererEmphasis{GEOS3}test.cpp:271): Puntero \markdownRendererCodeSpan{results} puede ser const\markdownRendererUlItemEnd 
+\markdownRendererUlItem ...\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{Estado}: Corregidos durante la revisión de código.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{Hallazgos ignorados por mantemer máxima similitud con la implementación original de MATLAB}\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{knownConditionTrueFalse (DEInteg.cpp:84)}: Condición State\markdownRendererUnderscore{} > DE\markdownRendererEmphasis{INVPARAM siempre evalúa a false debido a la inicialización de State} como DE\markdownRendererUnderscore{}INIT (valor 1).\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{duplicateExpression (G\markdownRendererUnderscore{}AccelHarmonic.cpp:23)}: Expresión 1.0 / d donde d = 1.0, resultando en una operación innecesaria.\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{variableScope}: Variables cuyo scope podría reducirse para mejorar la encapsulación.\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{shadowVariable}: Variables que ocultan otras variables del mismo nombre en scopes superiores.\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{unreadVariable}: Variables declaradas pero nunca leídas en el código.\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{duplicateAssignExpression}: Expresiones de asignación duplicadas que podrían simplificarse.\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{Estado}: Tambien ignorados intencionalmente para mantener parecido con implementación original de MATLAB.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{Ignorados}\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{Código Unused}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{unusedFunction} (anglesg.cpp:370): Función \markdownRendererCodeSpan{debug\markdownRendererUnderscore{}anglesg\markdownRendererUnderscore{}complete()} nunca utilizada.\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{Estado}: Mantenida para propósitos de debugging futuro.
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd \markdownRendererDocumentEnd

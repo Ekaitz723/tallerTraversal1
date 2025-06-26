@@ -1,0 +1,29 @@
+\markdownRendererDocumentBegin
+\markdownRendererSectionBegin
+\markdownRendererHeadingOne{Problemas y dificultades durante el proyecto}\markdownRendererInterblockSeparator
+{}Estos fueron los problemas con más ocurrencias y más mayores dificultades durante la realización del proyecto:\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingTwo{\markdownRendererStrongEmphasis{Indexación base-1 vs base-0}:}\markdownRendererInterblockSeparator
+{}La diferencia de indexación entre MATLAB (base 1) y C++ (base 0) causó errores sutiles pero críticos cuando me despistaba. La clase Matrix funciona en base 1 de indexación, por lo que esos errores me los ahorré, pero en el resto del código tuve que tener cuidado de ello.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingTwo{\markdownRendererStrongEmphasis{Orientación de vectores}:}\markdownRendererInterblockSeparator
+{}MATLAB maneja vectores fila y columna de forma implícita, pero en C++ hay que ser explícito. Los problemas de concatenación vertical vs horizontal no fueron muy dificultosos, pero molestaron bastante.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingTwo{\markdownRendererStrongEmphasis{Propagación silenciosa de errores}:}\markdownRendererInterblockSeparator
+{}El mayor problema fue que al tener funciones que dependen unas de otras (como \markdownRendererCodeSpan{anglesg} que llama a \markdownRendererCodeSpan{gibbs}, que usa \markdownRendererCodeSpan{angl} y \markdownRendererCodeSpan{unit}), un pequeño error en una función base se propagaba en cascada a través de toda la cadena de cálculos. Los errores se acumulaban y se manifestaban como resultados aparentemente correctos pero numericamente incorrectos varios niveles arriba, haciendo el debugging extremadamente complejo porque el fallo real estaba enterrado en funciones de bajo nivel. A nivel test unitario, quizas pasaba con mucha permisividad, y el error se va acumulando.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingTwo{\markdownRendererStrongEmphasis{Precisión numérica}:}\markdownRendererInterblockSeparator
+{}Diferencias mínimas en cálculos de punto flotante entre MATLAB y C++ causaron divergencias en algoritmos iterativos.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingTwo{\markdownRendererStrongEmphasis{Condiciones de error}:}\markdownRendererInterblockSeparator
+{}Las cadenas de error exactas (' ok' vs 'not coplanar') tenían que coincidir al caracter, incluyendo espacios. Los algoritmos como \markdownRendererCodeSpan{gibbs} dependían de estas comparaciones exactas.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingTwo{\markdownRendererStrongEmphasis{Testing y validación}:}\markdownRendererInterblockSeparator
+{}Verificar que cada función traduzida produjera exactamente los mismos resultados que MATLAB requirió crear casos de prueba exhaustivos y frameworks de comparación robustos.
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd \markdownRendererDocumentEnd

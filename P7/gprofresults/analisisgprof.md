@@ -1,4 +1,4 @@
-# Análisis del Output de Gprof Usando Gprof
+# Análisis del Output de Gprof
 
 El programa ejecutado es muy rápido: no se acumuló tiempo medible durante la ejecución. Esto significa que todas las funciones ejecutaron en menos de 0.01 segundos, que es la granularidad mínima de gprof.
 

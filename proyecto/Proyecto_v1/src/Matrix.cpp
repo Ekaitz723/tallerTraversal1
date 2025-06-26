@@ -37,7 +37,7 @@ Matrix::Matrix(double x, double y, double z) : fil(3), col(1)
     matrix[2][0] = z;
 }
 
-Matrix::Matrix(int fil, int col, double v[], int n): fil(fil), col(col)
+Matrix::Matrix(int fil, int col, const double v[], int n): fil(fil), col(col)
 {
     // printf("Matrix::Matrix(int fil, int col, double v[], int n) - Creando matriz de %d filas y %d columnas con %d elementos\n", fil, col, n);
     initMatrix();
@@ -344,7 +344,7 @@ void Matrix::assign_row(int row_index, const Matrix& v) {
 }
 
 // si datasize es 0, pues todo 0 ya ves tu
-void Matrix::assign_column(int col_index, double* data, int datasize) {
+void Matrix::assign_column(int col_index, const double* data, int datasize) {
     if(col_index < 1 || col_index > col) {
         throw std::runtime_error("indice fuera de rango");
     }
@@ -358,7 +358,7 @@ void Matrix::assign_column(int col_index, double* data, int datasize) {
         }
     }
 }
-void Matrix::assign_row(int row_index, double* data, int datasize) {
+void Matrix::assign_row(int row_index, const double* data, int datasize) {
     if(row_index < 1 || row_index > fil) {
         throw std::runtime_error("indice fuera de rango");
     }
@@ -392,13 +392,13 @@ double Matrix::dot(const Matrix& a, const Matrix& b) {
         throw std::runtime_error("dot requiere vectores");
     }
     
-    int size = a.size();
-    if(size != b.size()) {
+    int len = a.size();
+    if(len != b.size()) {
         throw std::runtime_error("vectores deben tener mismo tamaño");
     }
     
     double result = 0.0;
-    for(int i = 1; i <= size; i++) { // 1-based index como en MatLab (horrible)
+    for(int i = 1; i <= len; i++) { // 1-based index como en MatLab (horrible)
         result += a(i) * b(i);
     }
     return result;

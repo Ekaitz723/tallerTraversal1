@@ -1,0 +1,984 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 26.39      0.19     0.19     4988     0.04     0.06  IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&)
+ 15.28      0.30     0.11 64445860     0.00     0.00  Matrix::operator()(int) const
+ 15.28      0.41     0.11    19182     0.01     0.01  AccelHarmonic(Matrix const&, Matrix const&, int, int)
+ 13.89      0.51     0.10    19182     0.01     0.01  Legendre(int, int, double, Matrix*&, Matrix*&)
+  6.94      0.56     0.05 77455943     0.00     0.00  Matrix::operator()(int, int) const
+  6.94      0.61     0.05    10116     0.00     0.00  Matrix::extract_row(Matrix const&, int)
+  4.17      0.64     0.03     2564     0.01     0.03  JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&)
+  4.17      0.67     0.03        1    30.00   710.00  EKF_GEOS3()
+  2.78      0.69     0.02  2330884     0.00     0.00  double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)
+  1.39      0.70     0.01    85128     0.00     0.00  Matrix::operator=(Matrix const&)
+  1.39      0.71     0.01    81523     0.00     0.00  Matrix::operator*(Matrix const&) const
+  1.39      0.72     0.01                             _init
+  0.00      0.72     0.00   552022     0.00     0.00  Matrix::initMatrix()
+  0.00      0.72     0.00   552005     0.00     0.00  Matrix::~Matrix()
+  0.00      0.72     0.00   186773     0.00     0.00  Matrix::Matrix(int, int)
+  0.00      0.72     0.00   107065     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+  0.00      0.72     0.00    78160     0.00     0.00  Matrix::operator*(double) const
+  0.00      0.72     0.00    70532     0.00     0.00  Matrix::norm() const
+  0.00      0.72     0.00    65800     0.00     0.00  Matrix::operator-(Matrix const&) const
+  0.00      0.72     0.00    58602     0.00     0.00  Matrix::operator+(Matrix const&) const
+  0.00      0.72     0.00    51280     0.00     0.00  Matrix::operator/(double) const
+  0.00      0.72     0.00    28204     0.00     0.00  Cheb3D(double, int, double, double, double const*, double const*, double const*)
+  0.00      0.72     0.00    25640     0.00     0.00  AccelPointMass(Matrix const&, Matrix const&, double)
+  0.00      0.72     0.00    25135     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_realloc_insert<double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double&&)
+  0.00      0.72     0.00    19814     0.00     0.00  R_z(double)
+  0.00      0.72     0.00    19421     0.00     0.00  Matrix::transpose() const
+  0.00      0.72     0.00    14823     0.00     0.00  R_x(double)
+  0.00      0.72     0.00     9886     0.00     0.00  R_y(double)
+  0.00      0.72     0.00     9882     0.00     0.00  MeanObliquity(double)
+  0.00      0.72     0.00     9882     0.00     0.00  NutAngles(double, double&, double&)
+  0.00      0.72     0.00     7128     0.00     0.00  Matrix::assign_column(int, Matrix const&)
+  0.00      0.72     0.00     4988     0.00     0.00  timediff(double, double, double&, double&, double&, double&, double&)
+  0.00      0.72     0.00     4987     0.00     0.00  Frac(double)
+  0.00      0.72     0.00     4987     0.00     0.00  gmst(double)
+  0.00      0.72     0.00     4941     0.00     0.00  EqnEquinox(double)
+  0.00      0.72     0.00     4941     0.00     0.00  PoleMatrix(double, double)
+  0.00      0.72     0.00     4941     0.00     0.00  PrecMatrix(double, double)
+  0.00      0.72     0.00     4941     0.00     0.00  gast(double)
+  0.00      0.72     0.00     4941     0.00     0.00  GHAMatrix(double)
+  0.00      0.72     0.00     4941     0.00     0.00  NutMatrix(double)
+  0.00      0.72     0.00     2704     0.00     0.00  sign_(double, double)
+  0.00      0.72     0.00     2564     0.00     0.11  Accel(double, Matrix const&)
+  0.00      0.72     0.00     2564     0.00     0.00  Mjday_TDB(double)
+  0.00      0.72     0.00     2374     0.00     0.08  G_AccelHarmonic(Matrix const&, Matrix const&, int, int)
+  0.00      0.72     0.00     2374     0.00     0.16  VarEqn(double, Matrix const&)
+  0.00      0.72     0.00      414     0.00     0.00  test_DEInteg()
+  0.00      0.72     0.00      230     0.00     0.00  int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
+  0.00      0.72     0.00      185     0.00     0.00  Matrix::eye(int)
+  0.00      0.72     0.00      174     0.00     0.00  std::_Function_handler<void (), void (*)()>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+  0.00      0.72     0.00      138     0.00     0.00  MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&)
+  0.00      0.72     0.00      102     0.00     0.00  Matrix::dot(Matrix const&, Matrix const&)
+  0.00      0.72     0.00       94     0.00     6.97  DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&)
+  0.00      0.72     0.00       92     0.00     0.00  AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&)
+  0.00      0.72     0.00       92     0.00     0.00  Matrix::extract_column(Matrix const&, int)
+  0.00      0.72     0.00       58     0.00     0.00  TestFramework::registerTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::function<void ()>)
+  0.00      0.72     0.00       58     0.00     0.00  std::_Function_base::~_Function_base()
+  0.00      0.72     0.00       50     0.00     0.00  Matrix::Matrix(Matrix const&)
+  0.00      0.72     0.00       47     0.00     0.00  Mjday(int, int, int, int, int, double)
+  0.00      0.72     0.00       46     0.00     0.00  TimeUpdate(Matrix const&, Matrix const&, double)
+  0.00      0.72     0.00       29     0.00     0.00  void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_realloc_insert<std::vector<double, std::allocator<double> > const&>(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, std::vector<double, std::allocator<double> > const&)
+  0.00      0.72     0.00       18     0.00     0.00  TestFramework::getInstance()
+  0.00      0.72     0.00       12     0.00     0.00  _GLOBAL__sub_I__Z7DEIntegPF6MatrixdRKS_EddddiS1_
+  0.00      0.72     0.00       10     0.00     0.00  Matrix::determinant() const
+  0.00      0.72     0.00        7     0.00     0.00  void std::vector<TestFramework::Test, std::allocator<TestFramework::Test> >::_M_realloc_insert<TestFramework::Test>(__gnu_cxx::__normal_iterator<TestFramework::Test*, std::vector<TestFramework::Test, std::allocator<TestFramework::Test> > >, TestFramework::Test&&)
+  0.00      0.72     0.00        6     0.00     0.00  _GLOBAL__sub_I__Z8LegendreiidRP6MatrixS1_
+  0.00      0.72     0.00        5     0.00     0.00  Matrix::cross(Matrix const&, Matrix const&)
+  0.00      0.72     0.00        4     0.00     0.00  LTC(double, double)
+  0.00      0.72     0.00        4     0.00     0.00  unit(Matrix const&)
+  0.00      0.72     0.00        3     0.00     0.00  Geodetic(Matrix const&, double&, double&, double&)
+  0.00      0.72     0.00        2     0.00     0.00  angl(Matrix const&, Matrix const&)
+  0.00      0.72     0.00        1     0.00     0.00  find_largest_real_root(double const*)
+  0.00      0.72     0.00        1     0.00     0.00  gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+  0.00      0.72     0.00        1     0.00     0.20  anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&)
+  0.00      0.72     0.00        1     0.00     0.00  Position(double, double, double)
+  0.00      0.72     0.00        1     0.00     0.00  elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&)
+  0.00      0.72     0.00        1     0.00     0.00  Matrix::union_vector(Matrix const&, Matrix const&)
+  0.00      0.72     0.00        1     0.00     0.00  Matrix::inverse() const
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 1.39% of 0.72 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     98.6    0.00    0.71                 main [1]
+                0.03    0.68       1/1           EKF_GEOS3() [2]
+-----------------------------------------------
+                0.03    0.68       1/1           main [1]
+[2]     98.6    0.03    0.68       1         EKF_GEOS3() [2]
+                0.00    0.65      94/94          DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.02    0.00 2330884/2330884     double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [14]
+                0.00    0.00      47/4988        IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.00    0.00 2645299/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00       1/1           anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00     138/138         MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00     460/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00     230/85128       Matrix::operator=(Matrix const&) [15]
+                0.00    0.00      46/46          TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00    4698/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00      92/92          AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [29]
+                0.00    0.00      46/19814       R_z(double) [24]
+                0.00    0.00       1/4           LTC(double, double) [30]
+                0.00    0.00       1/1           Position(double, double, double) [35]
+                0.00    0.00  107065/107065      void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&) [45]
+                0.00    0.00   25135/25135       void std::vector<double, std::allocator<double> >::_M_realloc_insert<double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double&&) [52]
+                0.00    0.00    1532/552005      Matrix::~Matrix() [43]
+                0.00    0.00     414/414         test_DEInteg() [64]
+                0.00    0.00     230/230         int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [65]
+                0.00    0.00     191/552022      Matrix::initMatrix() [42]
+                0.00    0.00     191/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00     138/65800       Matrix::operator-(Matrix const&) const [48]
+                0.00    0.00      92/92          Matrix::extract_column(Matrix const&, int) [69]
+                0.00    0.00      48/50          Matrix::Matrix(Matrix const&) [72]
+                0.00    0.00      47/47          Mjday(int, int, int, int, int, double) [73]
+                0.00    0.00      47/4988        timediff(double, double, double&, double&, double&, double&, double&) [57]
+                0.00    0.00      46/4987        gmst(double) [59]
+                0.00    0.00      46/70532       Matrix::norm() const [47]
+                0.00    0.00      46/78160       Matrix::operator*(double) const [46]
+                0.00    0.00      46/19421       Matrix::transpose() const [53]
+                0.00    0.00      29/29          void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_realloc_insert<std::vector<double, std::allocator<double> > const&>(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, std::vector<double, std::allocator<double> > const&) [74]
+                0.00    0.00       1/1           Matrix::union_vector(Matrix const&, Matrix const&) [83]
+                0.00    0.00       1/185         Matrix::eye(int) [66]
+-----------------------------------------------
+                0.00    0.65      94/94          EKF_GEOS3() [2]
+[3]     91.0    0.00    0.65      94         DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.00    0.38    2374/2374        VarEqn(double, Matrix const&) [4]
+                0.00    0.27    2564/2564        Accel(double, Matrix const&) [6]
+                0.00    0.00 1388185/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00 2152056/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00    5126/85128       Matrix::operator=(Matrix const&) [15]
+                0.00    0.00    6254/552005      Matrix::~Matrix() [43]
+                0.00    0.00    2704/2704        sign_(double, double) [62]
+                0.00    0.00    1410/552022      Matrix::initMatrix() [42]
+                0.00    0.00    1410/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.38    2374/2374        DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+[4]     52.7    0.00    0.38    2374         VarEqn(double, Matrix const&) [4]
+                0.00    0.19    2374/2374        G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.09    0.06    2374/4988        IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.01    0.02    2374/19182       AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00    9496/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00    2374/4941        PrecMatrix(double, double) [18]
+                0.00    0.00    2374/4941        NutMatrix(double) [19]
+                0.00    0.00  227904/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00    2374/4941        PoleMatrix(double, double) [20]
+                0.00    0.00  277758/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00    2374/4941        GHAMatrix(double) [27]
+                0.00    0.00   33236/552005      Matrix::~Matrix() [43]
+                0.00    0.00   11870/552022      Matrix::initMatrix() [42]
+                0.00    0.00   11870/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00    2374/4988        timediff(double, double, double&, double&, double&, double&, double&) [57]
+-----------------------------------------------
+                0.00    0.00       3/4988        anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      47/4988        EKF_GEOS3() [2]
+                0.09    0.06    2374/4988        VarEqn(double, Matrix const&) [4]
+                0.10    0.07    2564/4988        Accel(double, Matrix const&) [6]
+[5]     44.1    0.19    0.13    4988         IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.10    0.00 60265016/64445860     Matrix::operator()(int) const [10]
+                0.02    0.00    4988/10116       Matrix::extract_row(Matrix const&, int) [12]
+                0.00    0.00  124652/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00    4988/552005      Matrix::~Matrix() [43]
+-----------------------------------------------
+                0.00    0.27    2564/2564        DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+[6]     37.6    0.00    0.27    2564         Accel(double, Matrix const&) [6]
+                0.10    0.07    2564/4988        IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.03    0.04    2564/2564        JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+                0.01    0.02    2564/19182       AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00   25640/85128       Matrix::operator=(Matrix const&) [15]
+                0.00    0.00    7692/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00    2564/4941        PrecMatrix(double, double) [18]
+                0.00    0.00    2564/4941        NutMatrix(double) [19]
+                0.00    0.00    2564/4941        PoleMatrix(double, double) [20]
+                0.00    0.00   46152/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00    2564/4941        GHAMatrix(double) [27]
+                0.00    0.00  102560/552005      Matrix::~Matrix() [43]
+                0.00    0.00   25640/25640       AccelPointMass(Matrix const&, Matrix const&, double) [51]
+                0.00    0.00   25640/58602       Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00    5128/552022      Matrix::initMatrix() [42]
+                0.00    0.00    5128/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00    2564/4988        timediff(double, double, double&, double&, double&, double&, double&) [57]
+                0.00    0.00    2564/2564        Mjday_TDB(double) [63]
+-----------------------------------------------
+                0.01    0.02    2374/19182       VarEqn(double, Matrix const&) [4]
+                0.01    0.02    2564/19182       Accel(double, Matrix const&) [6]
+                0.08    0.11   14244/19182       G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+[7]     36.1    0.11    0.15   19182         AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.10    0.02   19182/19182       Legendre(int, int, double, Matrix*&, Matrix*&) [9]
+                0.03    0.00 39879378/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00   38364/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00  326094/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00   95910/552005      Matrix::~Matrix() [43]
+                0.00    0.00   19182/70532       Matrix::norm() const [47]
+                0.00    0.00   19182/552022      Matrix::initMatrix() [42]
+                0.00    0.00   19182/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00   19182/19421       Matrix::transpose() const [53]
+-----------------------------------------------
+                0.00    0.19    2374/2374        VarEqn(double, Matrix const&) [4]
+[8]     26.8    0.00    0.19    2374         G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.08    0.11   14244/19182       AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00    7122/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00   64098/552005      Matrix::~Matrix() [43]
+                0.00    0.00   21366/78160       Matrix::operator*(double) const [46]
+                0.00    0.00   14244/65800       Matrix::operator-(Matrix const&) const [48]
+                0.00    0.00    9496/552022      Matrix::initMatrix() [42]
+                0.00    0.00    9496/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00    7122/58602       Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00    7122/7128        Matrix::assign_column(int, Matrix const&) [56]
+-----------------------------------------------
+                0.10    0.02   19182/19182       AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+[9]     16.5    0.10    0.02   19182         Legendre(int, int, double, Matrix*&, Matrix*&) [9]
+                0.02    0.00 29329278/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00   38364/552022      Matrix::initMatrix() [42]
+                0.00    0.00   38364/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00       3/64445860     Position(double, double, double) [35]
+                0.00    0.00       9/64445860     Geodetic(Matrix const&, double&, double&, double&) [34]
+                0.00    0.00      24/64445860     elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00      24/64445860     unit(Matrix const&) [32]
+                0.00    0.00      33/64445860     anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00    1196/64445860     AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [29]
+                0.00    0.00    4698/64445860     EKF_GEOS3() [2]
+                0.00    0.00    7122/64445860     G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.00    0.00   46152/64445860     Accel(double, Matrix const&) [6]
+                0.00    0.00   84612/64445860     Cheb3D(double, int, double, double, double const*, double const*, double const*) [22]
+                0.00    0.00  227904/64445860     VarEqn(double, Matrix const&) [4]
+                0.00    0.00  326094/64445860     AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00 1388185/64445860     DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.00    0.00 2094788/64445860     JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+                0.10    0.00 60265016/64445860     IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+[10]    15.3    0.11    0.00 64445860         Matrix::operator()(int) const [10]
+-----------------------------------------------
+                0.03    0.04    2564/2564        Accel(double, Matrix const&) [6]
+[11]     9.3    0.03    0.04    2564         JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+                0.03    0.00    5128/10116       Matrix::extract_row(Matrix const&, int) [12]
+                0.01    0.00   53844/85128       Matrix::operator=(Matrix const&) [15]
+                0.00    0.00 2094788/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00 2646048/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00   28204/28204       Cheb3D(double, int, double, double, double const*, double const*, double const*) [22]
+                0.00    0.00   89740/552005      Matrix::~Matrix() [43]
+                0.00    0.00   30768/78160       Matrix::operator*(double) const [46]
+                0.00    0.00   28204/552022      Matrix::initMatrix() [42]
+                0.00    0.00   28204/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00   25640/65800       Matrix::operator-(Matrix const&) const [48]
+-----------------------------------------------
+                0.02    0.00    4988/10116       IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.03    0.00    5128/10116       JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+[12]     6.9    0.05    0.00   10116         Matrix::extract_row(Matrix const&, int) [12]
+                0.00    0.00   10116/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00       5/77455943     anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      72/77455943     LTC(double, double) [30]
+                0.00    0.00     138/77455943     MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00     552/77455943     AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [29]
+                0.00    0.00   88974/77455943     R_y(double) [26]
+                0.00    0.00  124652/77455943     IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.00    0.00  133407/77455943     R_x(double) [25]
+                0.00    0.00  178326/77455943     R_z(double) [24]
+                0.00    0.00  277758/77455943     VarEqn(double, Matrix const&) [4]
+                0.00    0.00 2152056/77455943     DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.00    0.00 2645299/77455943     EKF_GEOS3() [2]
+                0.00    0.00 2646048/77455943     JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+                0.02    0.00 29329278/77455943     Legendre(int, int, double, Matrix*&, Matrix*&) [9]
+                0.03    0.00 39879378/77455943     AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+[13]     6.9    0.05    0.00 77455943         Matrix::operator()(int, int) const [13]
+-----------------------------------------------
+                0.02    0.00 2330884/2330884     EKF_GEOS3() [2]
+[14]     2.8    0.02    0.00 2330884         double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [14]
+-----------------------------------------------
+                0.00    0.00       1/85128       gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00      11/85128       anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00     230/85128       EKF_GEOS3() [2]
+                0.00    0.00     276/85128       MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00    5126/85128       DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.00    0.00   25640/85128       Accel(double, Matrix const&) [6]
+                0.01    0.00   53844/85128       JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+[15]     1.4    0.01    0.00   85128         Matrix::operator=(Matrix const&) [15]
+-----------------------------------------------
+                0.00    0.00       4/81523       LTC(double, double) [30]
+                0.00    0.00      20/81523       anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      92/81523       TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00     460/81523       EKF_GEOS3() [2]
+                0.00    0.00     690/81523       MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00    4941/81523       PoleMatrix(double, double) [20]
+                0.00    0.00    7692/81523       Accel(double, Matrix const&) [6]
+                0.00    0.00    9496/81523       VarEqn(double, Matrix const&) [4]
+                0.00    0.00    9882/81523       NutMatrix(double) [19]
+                0.00    0.00    9882/81523       PrecMatrix(double, double) [18]
+                0.00    0.00   38364/81523       AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+[16]     1.4    0.01    0.00   81523         Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00   81523/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     1.4    0.01    0.00                 _init [17]
+-----------------------------------------------
+                0.00    0.00       3/4941        anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00    2374/4941        VarEqn(double, Matrix const&) [4]
+                0.00    0.00    2564/4941        Accel(double, Matrix const&) [6]
+[18]     0.2    0.00    0.00    4941         PrecMatrix(double, double) [18]
+                0.00    0.00    9882/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00    9882/19814       R_z(double) [24]
+                0.00    0.00    4941/9886        R_y(double) [26]
+                0.00    0.00   19764/552005      Matrix::~Matrix() [43]
+-----------------------------------------------
+                0.00    0.00       3/4941        anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00    2374/4941        VarEqn(double, Matrix const&) [4]
+                0.00    0.00    2564/4941        Accel(double, Matrix const&) [6]
+[19]     0.2    0.00    0.00    4941         NutMatrix(double) [19]
+                0.00    0.00    9882/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00    9882/14823       R_x(double) [25]
+                0.00    0.00    4941/19814       R_z(double) [24]
+                0.00    0.00   19764/552005      Matrix::~Matrix() [43]
+                0.00    0.00    4941/9882        MeanObliquity(double) [54]
+                0.00    0.00    4941/9882        NutAngles(double, double&, double&) [55]
+-----------------------------------------------
+                0.00    0.00       3/4941        anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00    2374/4941        VarEqn(double, Matrix const&) [4]
+                0.00    0.00    2564/4941        Accel(double, Matrix const&) [6]
+[20]     0.1    0.00    0.00    4941         PoleMatrix(double, double) [20]
+                0.00    0.00    4941/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00    4941/14823       R_x(double) [25]
+                0.00    0.00    4941/9886        R_y(double) [26]
+                0.00    0.00    9882/552005      Matrix::~Matrix() [43]
+-----------------------------------------------
+                0.00    0.00       1/1           EKF_GEOS3() [2]
+[21]     0.0    0.00    0.00       1         anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00       3/4988        IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.00    0.00      20/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00      11/85128       Matrix::operator=(Matrix const&) [15]
+                0.00    0.00       3/4941        PrecMatrix(double, double) [18]
+                0.00    0.00       3/4941        NutMatrix(double) [19]
+                0.00    0.00       3/4           LTC(double, double) [30]
+                0.00    0.00       3/4941        PoleMatrix(double, double) [20]
+                0.00    0.00       1/1           gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00      33/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00       1/1           elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00       3/4941        GHAMatrix(double) [27]
+                0.00    0.00       3/3           Geodetic(Matrix const&, double&, double&, double&) [34]
+                0.00    0.00       5/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00      73/552005      Matrix::~Matrix() [43]
+                0.00    0.00      10/78160       Matrix::operator*(double) const [46]
+                0.00    0.00       9/552022      Matrix::initMatrix() [42]
+                0.00    0.00       9/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00       9/19421       Matrix::transpose() const [53]
+                0.00    0.00       9/58602       Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00       6/7128        Matrix::assign_column(int, Matrix const&) [56]
+                0.00    0.00       5/70532       Matrix::norm() const [47]
+                0.00    0.00       3/4988        timediff(double, double, double&, double&, double&, double&, double&) [57]
+                0.00    0.00       3/102         Matrix::dot(Matrix const&, Matrix const&) [68]
+                0.00    0.00       2/50          Matrix::Matrix(Matrix const&) [72]
+                0.00    0.00       1/1           Matrix::inverse() const [84]
+                0.00    0.00       1/1           find_largest_real_root(double const*) [82]
+-----------------------------------------------
+                0.00    0.00   28204/28204       JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+[22]     0.0    0.00    0.00   28204         Cheb3D(double, int, double, double, double const*, double const*, double const*) [22]
+                0.00    0.00   84612/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00   28204/552022      Matrix::initMatrix() [42]
+                0.00    0.00   28204/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00     138/138         EKF_GEOS3() [2]
+[23]     0.0    0.00    0.00     138         MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00     690/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00     276/85128       Matrix::operator=(Matrix const&) [15]
+                0.00    0.00     138/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00    1380/552005      Matrix::~Matrix() [43]
+                0.00    0.00     276/78160       Matrix::operator*(double) const [46]
+                0.00    0.00     138/19421       Matrix::transpose() const [53]
+                0.00    0.00     138/58602       Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00     138/185         Matrix::eye(int) [66]
+                0.00    0.00     138/65800       Matrix::operator-(Matrix const&) const [48]
+-----------------------------------------------
+                0.00    0.00       4/19814       LTC(double, double) [30]
+                0.00    0.00      46/19814       EKF_GEOS3() [2]
+                0.00    0.00    4941/19814       GHAMatrix(double) [27]
+                0.00    0.00    4941/19814       NutMatrix(double) [19]
+                0.00    0.00    9882/19814       PrecMatrix(double, double) [18]
+[24]     0.0    0.00    0.00   19814         R_z(double) [24]
+                0.00    0.00  178326/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00   19814/552022      Matrix::initMatrix() [42]
+                0.00    0.00   19814/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00    4941/14823       PoleMatrix(double, double) [20]
+                0.00    0.00    9882/14823       NutMatrix(double) [19]
+[25]     0.0    0.00    0.00   14823         R_x(double) [25]
+                0.00    0.00  133407/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00   14823/552022      Matrix::initMatrix() [42]
+                0.00    0.00   14823/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00       4/9886        LTC(double, double) [30]
+                0.00    0.00    4941/9886        PoleMatrix(double, double) [20]
+                0.00    0.00    4941/9886        PrecMatrix(double, double) [18]
+[26]     0.0    0.00    0.00    9886         R_y(double) [26]
+                0.00    0.00   88974/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00    9886/552022      Matrix::initMatrix() [42]
+                0.00    0.00    9886/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00       3/4941        anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00    2374/4941        VarEqn(double, Matrix const&) [4]
+                0.00    0.00    2564/4941        Accel(double, Matrix const&) [6]
+[27]     0.0    0.00    0.00    4941         GHAMatrix(double) [27]
+                0.00    0.00    4941/19814       R_z(double) [24]
+                0.00    0.00    4941/4941        gast(double) [61]
+-----------------------------------------------
+                0.00    0.00      46/46          EKF_GEOS3() [2]
+[28]     0.0    0.00    0.00      46         TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00      92/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00     230/552005      Matrix::~Matrix() [43]
+                0.00    0.00      46/185         Matrix::eye(int) [66]
+                0.00    0.00      46/78160       Matrix::operator*(double) const [46]
+                0.00    0.00      46/19421       Matrix::transpose() const [53]
+                0.00    0.00      46/58602       Matrix::operator+(Matrix const&) const [49]
+-----------------------------------------------
+                0.00    0.00      92/92          EKF_GEOS3() [2]
+[29]     0.0    0.00    0.00      92         AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [29]
+                0.00    0.00    1196/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00     552/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00     184/552022      Matrix::initMatrix() [42]
+                0.00    0.00     184/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00      92/102         Matrix::dot(Matrix const&, Matrix const&) [68]
+-----------------------------------------------
+                0.00    0.00       1/4           EKF_GEOS3() [2]
+                0.00    0.00       3/4           anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+[30]     0.0    0.00    0.00       4         LTC(double, double) [30]
+                0.00    0.00       4/81523       Matrix::operator*(Matrix const&) const [16]
+                0.00    0.00      72/77455943     Matrix::operator()(int, int) const [13]
+                0.00    0.00       4/9886        R_y(double) [26]
+                0.00    0.00       4/19814       R_z(double) [24]
+                0.00    0.00       8/552005      Matrix::~Matrix() [43]
+-----------------------------------------------
+                0.00    0.00       1/1           anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+[31]     0.0    0.00    0.00       1         gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00       1/85128       Matrix::operator=(Matrix const&) [15]
+                0.00    0.00       4/4           unit(Matrix const&) [32]
+                0.00    0.00      23/552005      Matrix::~Matrix() [43]
+                0.00    0.00       8/78160       Matrix::operator*(double) const [46]
+                0.00    0.00       7/58602       Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00       5/70532       Matrix::norm() const [47]
+                0.00    0.00       4/5           Matrix::cross(Matrix const&, Matrix const&) [80]
+                0.00    0.00       3/102         Matrix::dot(Matrix const&, Matrix const&) [68]
+                0.00    0.00       2/2           angl(Matrix const&, Matrix const&) [81]
+                0.00    0.00       1/552022      Matrix::initMatrix() [42]
+                0.00    0.00       1/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00       4/4           gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+[32]     0.0    0.00    0.00       4         unit(Matrix const&) [32]
+                0.00    0.00      24/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00       4/70532       Matrix::norm() const [47]
+                0.00    0.00       4/552022      Matrix::initMatrix() [42]
+                0.00    0.00       4/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00       1/1           anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+[33]     0.0    0.00    0.00       1         elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00      24/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00       3/70532       Matrix::norm() const [47]
+                0.00    0.00       3/552005      Matrix::~Matrix() [43]
+                0.00    0.00       2/552022      Matrix::initMatrix() [42]
+                0.00    0.00       2/186773      Matrix::Matrix(int, int) [44]
+                0.00    0.00       2/102         Matrix::dot(Matrix const&, Matrix const&) [68]
+                0.00    0.00       1/5           Matrix::cross(Matrix const&, Matrix const&) [80]
+-----------------------------------------------
+                0.00    0.00       3/3           anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+[34]     0.0    0.00    0.00       3         Geodetic(Matrix const&, double&, double&, double&) [34]
+                0.00    0.00       9/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00       3/70532       Matrix::norm() const [47]
+-----------------------------------------------
+                0.00    0.00       1/1           EKF_GEOS3() [2]
+[35]     0.0    0.00    0.00       1         Position(double, double, double) [35]
+                0.00    0.00       3/64445860     Matrix::operator()(int) const [10]
+                0.00    0.00       1/552022      Matrix::initMatrix() [42]
+                0.00    0.00       1/186773      Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00       1/552022      Matrix::union_vector(Matrix const&, Matrix const&) [83]
+                0.00    0.00       1/552022      Position(double, double, double) [35]
+                0.00    0.00       1/552022      gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00       2/552022      elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00       3/552022      Matrix::determinant() const [77]
+                0.00    0.00       4/552022      unit(Matrix const&) [32]
+                0.00    0.00       5/552022      Matrix::cross(Matrix const&, Matrix const&) [80]
+                0.00    0.00       9/552022      anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      11/552022      Matrix::inverse() const [84]
+                0.00    0.00      50/552022      Matrix::Matrix(Matrix const&) [72]
+                0.00    0.00      92/552022      Matrix::extract_column(Matrix const&, int) [69]
+                0.00    0.00     184/552022      AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [29]
+                0.00    0.00     185/552022      Matrix::eye(int) [66]
+                0.00    0.00     191/552022      EKF_GEOS3() [2]
+                0.00    0.00    1410/552022      DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.00    0.00    5128/552022      Accel(double, Matrix const&) [6]
+                0.00    0.00    9496/552022      G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.00    0.00    9886/552022      R_y(double) [26]
+                0.00    0.00   10116/552022      Matrix::extract_row(Matrix const&, int) [12]
+                0.00    0.00   11870/552022      VarEqn(double, Matrix const&) [4]
+                0.00    0.00   14823/552022      R_x(double) [25]
+                0.00    0.00   19182/552022      AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00   19421/552022      Matrix::transpose() const [53]
+                0.00    0.00   19814/552022      R_z(double) [24]
+                0.00    0.00   28204/552022      Cheb3D(double, int, double, double, double const*, double const*, double const*) [22]
+                0.00    0.00   28204/552022      JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+                0.00    0.00   38364/552022      Legendre(int, int, double, Matrix*&, Matrix*&) [9]
+                0.00    0.00   51280/552022      Matrix::operator/(double) const [50]
+                0.00    0.00   58602/552022      Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00   65800/552022      Matrix::operator-(Matrix const&) const [48]
+                0.00    0.00   78160/552022      Matrix::operator*(double) const [46]
+                0.00    0.00   81523/552022      Matrix::operator*(Matrix const&) const [16]
+[42]     0.0    0.00    0.00  552022         Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00       3/552005      elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00       8/552005      LTC(double, double) [30]
+                0.00    0.00      23/552005      gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00      73/552005      anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00     230/552005      TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00    1380/552005      MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00    1532/552005      EKF_GEOS3() [2]
+                0.00    0.00    4988/552005      IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [5]
+                0.00    0.00    6254/552005      DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.00    0.00    9882/552005      PoleMatrix(double, double) [20]
+                0.00    0.00   19764/552005      NutMatrix(double) [19]
+                0.00    0.00   19764/552005      PrecMatrix(double, double) [18]
+                0.00    0.00   33236/552005      VarEqn(double, Matrix const&) [4]
+                0.00    0.00   64098/552005      G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.00    0.00   89740/552005      JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+                0.00    0.00   95910/552005      AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00  102560/552005      Accel(double, Matrix const&) [6]
+                0.00    0.00  102560/552005      AccelPointMass(Matrix const&, Matrix const&, double) [51]
+[43]     0.0    0.00    0.00  552005         Matrix::~Matrix() [43]
+-----------------------------------------------
+                0.00    0.00       1/186773      Position(double, double, double) [35]
+                0.00    0.00       1/186773      gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00       2/186773      elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00       4/186773      unit(Matrix const&) [32]
+                0.00    0.00       9/186773      anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00     184/186773      AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [29]
+                0.00    0.00     191/186773      EKF_GEOS3() [2]
+                0.00    0.00    1410/186773      DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+                0.00    0.00    5128/186773      Accel(double, Matrix const&) [6]
+                0.00    0.00    9496/186773      G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.00    0.00    9886/186773      R_y(double) [26]
+                0.00    0.00   11870/186773      VarEqn(double, Matrix const&) [4]
+                0.00    0.00   14823/186773      R_x(double) [25]
+                0.00    0.00   19182/186773      AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00   19814/186773      R_z(double) [24]
+                0.00    0.00   28204/186773      Cheb3D(double, int, double, double, double const*, double const*, double const*) [22]
+                0.00    0.00   28204/186773      JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+                0.00    0.00   38364/186773      Legendre(int, int, double, Matrix*&, Matrix*&) [9]
+[44]     0.0    0.00    0.00  186773         Matrix::Matrix(int, int) [44]
+-----------------------------------------------
+                0.00    0.00  107065/107065      EKF_GEOS3() [2]
+[45]     0.0    0.00    0.00  107065         void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&) [45]
+-----------------------------------------------
+                0.00    0.00       8/78160       gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00      10/78160       anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      46/78160       EKF_GEOS3() [2]
+                0.00    0.00      46/78160       TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00     276/78160       MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00   21366/78160       G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.00    0.00   25640/78160       AccelPointMass(Matrix const&, Matrix const&, double) [51]
+                0.00    0.00   30768/78160       JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+[46]     0.0    0.00    0.00   78160         Matrix::operator*(double) const [46]
+                0.00    0.00   78160/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00       3/70532       Geodetic(Matrix const&, double&, double&, double&) [34]
+                0.00    0.00       3/70532       elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00       4/70532       angl(Matrix const&, Matrix const&) [81]
+                0.00    0.00       4/70532       unit(Matrix const&) [32]
+                0.00    0.00       5/70532       anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00       5/70532       gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00      46/70532       EKF_GEOS3() [2]
+                0.00    0.00   19182/70532       AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+                0.00    0.00   51280/70532       AccelPointMass(Matrix const&, Matrix const&, double) [51]
+[47]     0.0    0.00    0.00   70532         Matrix::norm() const [47]
+-----------------------------------------------
+                0.00    0.00     138/65800       EKF_GEOS3() [2]
+                0.00    0.00     138/65800       MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00   14244/65800       G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.00    0.00   25640/65800       AccelPointMass(Matrix const&, Matrix const&, double) [51]
+                0.00    0.00   25640/65800       JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [11]
+[48]     0.0    0.00    0.00   65800         Matrix::operator-(Matrix const&) const [48]
+                0.00    0.00   65800/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00       7/58602       gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00       9/58602       anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      46/58602       TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00     138/58602       MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00    7122/58602       G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+                0.00    0.00   25640/58602       Accel(double, Matrix const&) [6]
+                0.00    0.00   25640/58602       AccelPointMass(Matrix const&, Matrix const&, double) [51]
+[49]     0.0    0.00    0.00   58602         Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00   58602/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00   51280/51280       AccelPointMass(Matrix const&, Matrix const&, double) [51]
+[50]     0.0    0.00    0.00   51280         Matrix::operator/(double) const [50]
+                0.00    0.00   51280/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00   25640/25640       Accel(double, Matrix const&) [6]
+[51]     0.0    0.00    0.00   25640         AccelPointMass(Matrix const&, Matrix const&, double) [51]
+                0.00    0.00  102560/552005      Matrix::~Matrix() [43]
+                0.00    0.00   51280/70532       Matrix::norm() const [47]
+                0.00    0.00   51280/51280       Matrix::operator/(double) const [50]
+                0.00    0.00   25640/65800       Matrix::operator-(Matrix const&) const [48]
+                0.00    0.00   25640/58602       Matrix::operator+(Matrix const&) const [49]
+                0.00    0.00   25640/78160       Matrix::operator*(double) const [46]
+-----------------------------------------------
+                0.00    0.00   25135/25135       EKF_GEOS3() [2]
+[52]     0.0    0.00    0.00   25135         void std::vector<double, std::allocator<double> >::_M_realloc_insert<double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double&&) [52]
+-----------------------------------------------
+                0.00    0.00       9/19421       anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      46/19421       EKF_GEOS3() [2]
+                0.00    0.00      46/19421       TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00     138/19421       MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+                0.00    0.00   19182/19421       AccelHarmonic(Matrix const&, Matrix const&, int, int) [7]
+[53]     0.0    0.00    0.00   19421         Matrix::transpose() const [53]
+                0.00    0.00   19421/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00    4941/9882        EqnEquinox(double) [60]
+                0.00    0.00    4941/9882        NutMatrix(double) [19]
+[54]     0.0    0.00    0.00    9882         MeanObliquity(double) [54]
+-----------------------------------------------
+                0.00    0.00    4941/9882        EqnEquinox(double) [60]
+                0.00    0.00    4941/9882        NutMatrix(double) [19]
+[55]     0.0    0.00    0.00    9882         NutAngles(double, double&, double&) [55]
+-----------------------------------------------
+                0.00    0.00       6/7128        anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00    7122/7128        G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [8]
+[56]     0.0    0.00    0.00    7128         Matrix::assign_column(int, Matrix const&) [56]
+-----------------------------------------------
+                0.00    0.00       3/4988        anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      47/4988        EKF_GEOS3() [2]
+                0.00    0.00    2374/4988        VarEqn(double, Matrix const&) [4]
+                0.00    0.00    2564/4988        Accel(double, Matrix const&) [6]
+[57]     0.0    0.00    0.00    4988         timediff(double, double, double&, double&, double&, double&, double&) [57]
+-----------------------------------------------
+                0.00    0.00    4987/4987        gmst(double) [59]
+[58]     0.0    0.00    0.00    4987         Frac(double) [58]
+-----------------------------------------------
+                0.00    0.00      46/4987        EKF_GEOS3() [2]
+                0.00    0.00    4941/4987        gast(double) [61]
+[59]     0.0    0.00    0.00    4987         gmst(double) [59]
+                0.00    0.00    4987/4987        Frac(double) [58]
+-----------------------------------------------
+                0.00    0.00    4941/4941        gast(double) [61]
+[60]     0.0    0.00    0.00    4941         EqnEquinox(double) [60]
+                0.00    0.00    4941/9882        MeanObliquity(double) [54]
+                0.00    0.00    4941/9882        NutAngles(double, double&, double&) [55]
+-----------------------------------------------
+                0.00    0.00    4941/4941        GHAMatrix(double) [27]
+[61]     0.0    0.00    0.00    4941         gast(double) [61]
+                0.00    0.00    4941/4987        gmst(double) [59]
+                0.00    0.00    4941/4941        EqnEquinox(double) [60]
+-----------------------------------------------
+                0.00    0.00    2704/2704        DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [3]
+[62]     0.0    0.00    0.00    2704         sign_(double, double) [62]
+-----------------------------------------------
+                0.00    0.00    2564/2564        Accel(double, Matrix const&) [6]
+[63]     0.0    0.00    0.00    2564         Mjday_TDB(double) [63]
+-----------------------------------------------
+                0.00    0.00     414/414         EKF_GEOS3() [2]
+[64]     0.0    0.00    0.00     414         test_DEInteg() [64]
+-----------------------------------------------
+                0.00    0.00     230/230         EKF_GEOS3() [2]
+[65]     0.0    0.00    0.00     230         int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [65]
+-----------------------------------------------
+                0.00    0.00       1/185         EKF_GEOS3() [2]
+                0.00    0.00      46/185         TimeUpdate(Matrix const&, Matrix const&, double) [28]
+                0.00    0.00     138/185         MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [23]
+[66]     0.0    0.00    0.00     185         Matrix::eye(int) [66]
+                0.00    0.00     185/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00      58/174         TestFramework::~TestFramework() [198]
+                0.00    0.00      58/174         std::_Function_base::~_Function_base() [71]
+                0.00    0.00      58/174         TestFramework::registerTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::function<void ()>) [70]
+[67]     0.0    0.00    0.00     174         std::_Function_handler<void (), void (*)()>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [67]
+-----------------------------------------------
+                0.00    0.00       2/102         angl(Matrix const&, Matrix const&) [81]
+                0.00    0.00       2/102         elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00       3/102         anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00       3/102         gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+                0.00    0.00      92/102         AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [29]
+[68]     0.0    0.00    0.00     102         Matrix::dot(Matrix const&, Matrix const&) [68]
+-----------------------------------------------
+                0.00    0.00      92/92          EKF_GEOS3() [2]
+[69]     0.0    0.00    0.00      92         Matrix::extract_column(Matrix const&, int) [69]
+                0.00    0.00      92/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00       1/58          _GLOBAL__sub_I_auxParam [124]
+                0.00    0.00       1/58          _GLOBAL__sub_I_Cnm [85]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z14AccelPointMassRK6MatrixS1_d [93]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6AzElPaRK6MatrixRdS2_RPS_S4_ [110]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6Cheb3DdiddPKdS0_S0_ [111]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z7DEIntegPF6MatrixdRKS_EddddiS1_ [76]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z7EccAnomdd [114]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10EqnEquinoxd [87]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4Fracd [101]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9GHAMatrixd [119]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z15G_AccelHarmonicRK6MatrixS1_ii [94]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8GeodeticRK6MatrixRdS2_S2_ [115]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4IERSRK6MatrixdcRdS2_S2_S2_S2_S2_S2_S2_S2_ [102]
+                0.00    0.00       1/58          _GLOBAL__sub_I_PC [86]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3LTCdd [97]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8LegendreiidRP6MatrixS1_ [79]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z13MeanObliquityd [92]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10MeasUpdateR6MatrixdddRKS_S0_iRPS_ [88]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z5Mjdayiiiiid [107]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9Mjday_TDBd [120]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9NutAnglesdRdS_ [121]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9NutMatrixd [122]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10PoleMatrixdd [89]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8Positionddd [116]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10PrecMatrixdd [90]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3R_xd [98]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3R_yd [99]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3R_zd [100]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10TimeUpdateRK6MatrixS1_d [91]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6VarEqndRK6Matrix [112]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4anglRK6MatrixS1_ [103]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z22find_largest_real_rootPKd [96]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8elementsRK6MatrixRdS2_S2_S2_S2_S2_S2_ [117]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4gastd [104]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z5gibbsRK6MatrixS1_S1_RPS_RdS4_S4_RNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE [108]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4gmstd [105]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6hgibbsRK6MatrixS1_S1_dddRPS_RdS4_S4_RNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE [113]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z5sign_dd [109]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8timediffddRdS_S_S_S_ [118]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4unitRK6Matrix [106]
+                0.00    0.00       6/58          _GLOBAL__sub_I__ZN6MatrixC2Ei [123]
+                0.00    0.00      12/58          _GLOBAL__sub_I__Z15get_ekf_resultsv [95]
+[70]     0.0    0.00    0.00      58         TestFramework::registerTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::function<void ()>) [70]
+                0.00    0.00      58/174         std::_Function_handler<void (), void (*)()>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [67]
+                0.00    0.00       7/7           void std::vector<TestFramework::Test, std::allocator<TestFramework::Test> >::_M_realloc_insert<TestFramework::Test>(__gnu_cxx::__normal_iterator<TestFramework::Test*, std::vector<TestFramework::Test, std::allocator<TestFramework::Test> > >, TestFramework::Test&&) [78]
+-----------------------------------------------
+                0.00    0.00       1/58          _GLOBAL__sub_I_auxParam [124]
+                0.00    0.00       1/58          _GLOBAL__sub_I_Cnm [85]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z14AccelPointMassRK6MatrixS1_d [93]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6AzElPaRK6MatrixRdS2_RPS_S4_ [110]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6Cheb3DdiddPKdS0_S0_ [111]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z7DEIntegPF6MatrixdRKS_EddddiS1_ [76]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z7EccAnomdd [114]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10EqnEquinoxd [87]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4Fracd [101]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9GHAMatrixd [119]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z15G_AccelHarmonicRK6MatrixS1_ii [94]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8GeodeticRK6MatrixRdS2_S2_ [115]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4IERSRK6MatrixdcRdS2_S2_S2_S2_S2_S2_S2_S2_ [102]
+                0.00    0.00       1/58          _GLOBAL__sub_I_PC [86]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3LTCdd [97]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8LegendreiidRP6MatrixS1_ [79]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z13MeanObliquityd [92]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10MeasUpdateR6MatrixdddRKS_S0_iRPS_ [88]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z5Mjdayiiiiid [107]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9Mjday_TDBd [120]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9NutAnglesdRdS_ [121]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z9NutMatrixd [122]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10PoleMatrixdd [89]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8Positionddd [116]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10PrecMatrixdd [90]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3R_xd [98]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3R_yd [99]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z3R_zd [100]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z10TimeUpdateRK6MatrixS1_d [91]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6VarEqndRK6Matrix [112]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4anglRK6MatrixS1_ [103]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z22find_largest_real_rootPKd [96]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8elementsRK6MatrixRdS2_S2_S2_S2_S2_S2_ [117]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4gastd [104]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z5gibbsRK6MatrixS1_S1_RPS_RdS4_S4_RNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE [108]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4gmstd [105]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z6hgibbsRK6MatrixS1_S1_dddRPS_RdS4_S4_RNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE [113]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z5sign_dd [109]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z8timediffddRdS_S_S_S_ [118]
+                0.00    0.00       1/58          _GLOBAL__sub_I__Z4unitRK6Matrix [106]
+                0.00    0.00       6/58          _GLOBAL__sub_I__ZN6MatrixC2Ei [123]
+                0.00    0.00      12/58          _GLOBAL__sub_I__Z15get_ekf_resultsv [95]
+[71]     0.0    0.00    0.00      58         std::_Function_base::~_Function_base() [71]
+                0.00    0.00      58/174         std::_Function_handler<void (), void (*)()>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [67]
+-----------------------------------------------
+                0.00    0.00       2/50          anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+                0.00    0.00      48/50          EKF_GEOS3() [2]
+[72]     0.0    0.00    0.00      50         Matrix::Matrix(Matrix const&) [72]
+                0.00    0.00      50/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00      47/47          EKF_GEOS3() [2]
+[73]     0.0    0.00    0.00      47         Mjday(int, int, int, int, int, double) [73]
+-----------------------------------------------
+                0.00    0.00      29/29          EKF_GEOS3() [2]
+[74]     0.0    0.00    0.00      29         void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_realloc_insert<std::vector<double, std::allocator<double> > const&>(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, std::vector<double, std::allocator<double> > const&) [74]
+-----------------------------------------------
+                0.00    0.00       6/18          _GLOBAL__sub_I__ZN6MatrixC2Ei [123]
+                0.00    0.00      12/18          _GLOBAL__sub_I__Z15get_ekf_resultsv [95]
+[75]     0.0    0.00    0.00      18         TestFramework::getInstance() [75]
+-----------------------------------------------
+                0.00    0.00      12/12          _GLOBAL__sub_I__Z15get_ekf_resultsv [95]
+[76]     0.0    0.00    0.00      12         _GLOBAL__sub_I__Z7DEIntegPF6MatrixdRKS_EddddiS1_ [76]
+                0.00    0.00       1/58          TestFramework::registerTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::function<void ()>) [70]
+                0.00    0.00       1/58          std::_Function_base::~_Function_base() [71]
+-----------------------------------------------
+                                   3             Matrix::determinant() const [77]
+                0.00    0.00      10/10          Matrix::inverse() const [84]
+[77]     0.0    0.00    0.00      10+3       Matrix::determinant() const [77]
+                0.00    0.00       3/552022      Matrix::initMatrix() [42]
+                                   3             Matrix::determinant() const [77]
+-----------------------------------------------
+                0.00    0.00       7/7           TestFramework::registerTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::function<void ()>) [70]
+[78]     0.0    0.00    0.00       7         void std::vector<TestFramework::Test, std::allocator<TestFramework::Test> >::_M_realloc_insert<TestFramework::Test>(__gnu_cxx::__normal_iterator<TestFramework::Test*, std::vector<TestFramework::Test, std::allocator<TestFramework::Test> > >, TestFramework::Test&&) [78]
+-----------------------------------------------
+                0.00    0.00       6/6           _GLOBAL__sub_I__ZN6MatrixC2Ei [123]
+[79]     0.0    0.00    0.00       6         _GLOBAL__sub_I__Z8LegendreiidRP6MatrixS1_ [79]
+                0.00    0.00       1/58          TestFramework::registerTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::function<void ()>) [70]
+                0.00    0.00       1/58          std::_Function_base::~_Function_base() [71]
+-----------------------------------------------
+                0.00    0.00       1/5           elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [33]
+                0.00    0.00       4/5           gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+[80]     0.0    0.00    0.00       5         Matrix::cross(Matrix const&, Matrix const&) [80]
+                0.00    0.00       5/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00       2/2           gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [31]
+[81]     0.0    0.00    0.00       2         angl(Matrix const&, Matrix const&) [81]
+                0.00    0.00       4/70532       Matrix::norm() const [47]
+                0.00    0.00       2/102         Matrix::dot(Matrix const&, Matrix const&) [68]
+-----------------------------------------------
+                0.00    0.00       1/1           anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+[82]     0.0    0.00    0.00       1         find_largest_real_root(double const*) [82]
+-----------------------------------------------
+                0.00    0.00       1/1           EKF_GEOS3() [2]
+[83]     0.0    0.00    0.00       1         Matrix::union_vector(Matrix const&, Matrix const&) [83]
+                0.00    0.00       1/552022      Matrix::initMatrix() [42]
+-----------------------------------------------
+                0.00    0.00       1/1           anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [21]
+[84]     0.0    0.00    0.00       1         Matrix::inverse() const [84]
+                0.00    0.00      11/552022      Matrix::initMatrix() [42]
+                0.00    0.00      10/10          Matrix::determinant() const [77]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [76] _GLOBAL__sub_I__Z7DEIntegPF6MatrixdRKS_EddddiS1_ [31] gibbs(Matrix const&, Matrix const&, Matrix const&, Matrix*&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [80] Matrix::cross(Matrix const&, Matrix const&)
+  [79] _GLOBAL__sub_I__Z8LegendreiidRP6MatrixS1_ [62] sign_(double, double) [72] Matrix::Matrix(Matrix const&)
+  [60] EqnEquinox(double)     [29] AzElPa(Matrix const&, double&, double&, Matrix*&, Matrix*&) [44] Matrix::Matrix(int, int)
+  [23] MeasUpdate(Matrix&, double, double, double, Matrix const&, Matrix&, int, Matrix*&) [22] Cheb3D(double, int, double, double, double const*, double const*, double const*) [43] Matrix::~Matrix()
+  [20] PoleMatrix(double, double) [4] VarEqn(double, Matrix const&) [15] Matrix::operator=(Matrix const&)
+  [18] PrecMatrix(double, double) [3] DEInteg(Matrix (*)(double, Matrix const&), double, double, double, double, int, Matrix const&) [14] double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)
+  [28] TimeUpdate(Matrix const&, Matrix const&, double) [21] anglesg(double, double, double, double, double, double, double, double, double, Matrix const&, Matrix const&, Matrix const&, Matrix const&, Matrix*&, Matrix*&) [65] int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
+  [64] test_DEInteg()         [34] Geodetic(Matrix const&, double&, double&, double&) [77] Matrix::determinant() const
+   [7] AccelHarmonic(Matrix const&, Matrix const&, int, int) [9] Legendre(int, int, double, Matrix*&, Matrix*&) [47] Matrix::norm() const
+  [11] JPL_Eph_DE430(double, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&, Matrix*&) [35] Position(double, double, double) [84] Matrix::inverse() const
+  [54] MeanObliquity(double)  [33] elements(Matrix const&, double&, double&, double&, double&, double&, double&, double&) [53] Matrix::transpose() const
+  [51] AccelPointMass(Matrix const&, Matrix const&, double) [57] timediff(double, double, double&, double&, double&, double&, double&) [10] Matrix::operator()(int) const
+   [8] G_AccelHarmonic(Matrix const&, Matrix const&, int, int) [2] EKF_GEOS3() [13] Matrix::operator()(int, int) const
+  [82] find_largest_real_root(double const*) [27] GHAMatrix(double) [50] Matrix::operator/(double) const
+  [30] LTC(double, double)    [63] Mjday_TDB(double)      [48] Matrix::operator-(Matrix const&) const
+  [25] R_x(double)            [55] NutAngles(double, double&, double&) [16] Matrix::operator*(Matrix const&) const
+  [26] R_y(double)            [19] NutMatrix(double)      [46] Matrix::operator*(double) const
+  [24] R_z(double)            [75] TestFramework::getInstance() [49] Matrix::operator+(Matrix const&) const
+  [58] Frac(double)           [70] TestFramework::registerTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::function<void ()>) [71] std::_Function_base::~_Function_base()
+   [5] IERS(Matrix const&, double, char, double&, double&, double&, double&, double&, double&, double&, double&, double&) [42] Matrix::initMatrix() [67] std::_Function_handler<void (), void (*)()>::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+  [81] angl(Matrix const&, Matrix const&) [12] Matrix::extract_row(Matrix const&, int) [78] void std::vector<TestFramework::Test, std::allocator<TestFramework::Test> >::_M_realloc_insert<TestFramework::Test>(__gnu_cxx::__normal_iterator<TestFramework::Test*, std::vector<TestFramework::Test, std::allocator<TestFramework::Test> > >, TestFramework::Test&&)
+  [61] gast(double)           [83] Matrix::union_vector(Matrix const&, Matrix const&) [74] void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_realloc_insert<std::vector<double, std::allocator<double> > const&>(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, std::vector<double, std::allocator<double> > const&)
+  [59] gmst(double)           [56] Matrix::assign_column(int, Matrix const&) [45] void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+  [32] unit(Matrix const&)    [69] Matrix::extract_column(Matrix const&, int) [52] void std::vector<double, std::allocator<double> >::_M_realloc_insert<double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double&&)
+   [6] Accel(double, Matrix const&) [68] Matrix::dot(Matrix const&, Matrix const&) [17] _init
+  [73] Mjday(int, int, int, int, int, double) [66] Matrix::eye(int)

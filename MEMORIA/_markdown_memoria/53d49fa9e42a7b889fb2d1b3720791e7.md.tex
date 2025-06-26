@@ -1,0 +1,77 @@
+\markdownRendererDocumentBegin
+\markdownRendererSectionBegin
+\markdownRendererHeadingThree{Análisis de Rendimiento y Memoria Usando Valgrind}\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{Herramientas utilizadas:} Valgrind 3.22.0 (Memcheck, Callgrind, Cachegrind) \markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{Sistema:} Linux WSL2 (Ubuntu 24.04.2)\markdownRendererInterblockSeparator
+{}El programa ha sido sometido a un análisis completo de memoria y rendimiento usando Valgrind. Los resultados revelan un memory leak menor en el programa principal, mientras que los tests unitarios muestran un comportamiento limpio.\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFour{Análisis de Memoria (Memcheck)}\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFive{Estado General del Programa Principal}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Errores detectados:} 1 error (memory leak)\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Memory leaks:} 176 bytes perdidos (64 directos + 112 indirectos)\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Gestión de memoria:} Mayormente correcta con una falla menor\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{Detalles del Heap - Main}\markdownRendererInterblockSeparator
+{}\markdownRendererInputFencedCode{./_markdown_memoria/5e5cd0f6f575cb9f8fd3abc083d1606b.verbatim}{}\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{Desglose de Memory Leaks}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{64 bytes definitivamente perdidos:} 1 bloque en \markdownRendererCodeSpan{EKF\markdownRendererUnderscore{}GEOS3()}\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{112 bytes indirectamente perdidos:} 8 bloques relacionados con \markdownRendererCodeSpan{Matrix::initMatrix()}\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Origen:} Todas las pérdidas se originan en la función \markdownRendererCodeSpan{EKF\markdownRendererUnderscore{}GEOS3()} llamada desde \markdownRendererCodeSpan{main()}\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{Estado de Tests Unitarios}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Errores detectados:} 0\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Memory leaks:} Ninguno\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Gestión de memoria:} Perfecta\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{Interpretación:} El problema de memoria está localizado específicamente en la función \markdownRendererCodeSpan{EKF\markdownRendererUnderscore{}GEOS3()} del programa principal. Los tests unitarios funcionan perfectamente, lo que sugiere que el issue está en la lógica específica del filtro de Kalman extendido, no en las funciones base de la librería.\markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Análisis de Rendimiento (Callgrind/Cachegrind)}\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFive{Observaciones de Rendimiento}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem Los archivos de análisis de rendimiento no pudieron ser procesados completamente\markdownRendererUlItemEnd 
+\markdownRendererUlItem Se requiere instalación de herramientas adicionales (\markdownRendererCodeSpan{callgrind\markdownRendererUnderscore{}annotate}, \markdownRendererCodeSpan{cg\markdownRendererUnderscore{}annotate})\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Ubicación Específica del Memory Leak}\markdownRendererInterblockSeparator
+{}El memory leak se origina en tres ubicaciones dentro de \markdownRendererCodeSpan{EKF\markdownRendererUnderscore{}GEOS3()}:\markdownRendererInterblockSeparator
+{}\markdownRendererOlBeginTight
+\markdownRendererOlItemWithNumber{1}\markdownRendererStrongEmphasis{Línea 0x121DBC:} Allocación de objeto con \markdownRendererCodeSpan{operator new}\markdownRendererOlItemEnd 
+\markdownRendererOlItemWithNumber{2}\markdownRendererStrongEmphasis{Línea 0x121DD1:} Creación de matrices con \markdownRendererCodeSpan{Matrix::initMatrix()} \markdownRendererOlItemEnd 
+\markdownRendererOlItemWithNumber{3}\markdownRendererStrongEmphasis{Línea 0x11E5FE:} Allocación principal que causa el problema\markdownRendererOlItemEnd 
+\markdownRendererOlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Interpretación Técnica}\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFive{Impacto del Memory Leak}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Severidad:} Baja (solo 176 bytes)\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Frecuencia:} Una vez por ejecución del programa\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Impacto operacional:} Mínimo para ejecuciones cortas\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{Calidad del Código}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Tests unitarios:} Excelente gestión de memoria (0 leaks)\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Funciones core:} La clase Matrix y algoritmos base funcionan correctamente\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Problema localizado:} El problema está específicamente en el flujo principal del EKF\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight 
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd \markdownRendererDocumentEnd

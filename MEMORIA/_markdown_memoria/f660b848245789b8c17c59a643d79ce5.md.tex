@@ -1,0 +1,82 @@
+\markdownRendererDocumentBegin
+\markdownRendererSectionBegin
+\markdownRendererHeadingThree{Análisis de Rendimiento usando Gprof}\markdownRendererInterblockSeparator
+{}El programa ejecutado tiene un tiempo total de ejecución de \markdownRendererStrongEmphasis{0.72 segundos}. El análisis revela los principales cuellos de botella y patrones de uso.\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFour{Funciones más Costosas (Tiempo de CPU)}\markdownRendererInterblockSeparator
+{}Las funciones que más tiempo consumen son:\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{IERS()}} - 26.39\markdownRendererPercentSign{} del tiempo total (0.19s) con 4,988 llamadas\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{Matrix::operator()(int) const}} - 15.28\markdownRendererPercentSign{} (0.11s) con 64,445,860 llamadas\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{AccelHarmonic()}} - 15.28\markdownRendererPercentSign{} (0.11s) con 19,182 llamadas \markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{Legendre()}} - 13.89\markdownRendererPercentSign{} (0.10s) con 19,182 llamadas\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{Matrix::operator()(int, int) const}} - 6.94\markdownRendererPercentSign{} (0.05s) con 77,455,943 llamadas\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Funciones más Llamadas}\markdownRendererInterblockSeparator
+{}Las operaciones matriciales dominan completamente:\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{Matrix::operator()(int) const}} - \markdownRendererStrongEmphasis{64,445,860 llamadas} (acceso a elementos 1D)\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{Matrix::operator()(int, int) const}} - \markdownRendererStrongEmphasis{77,455,943 llamadas} (acceso a elementos 2D)\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{Matrix::initMatrix()}} - 552,022 llamadas\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{\markdownRendererCodeSpan{Matrix::\markdownRendererTilde{}Matrix()}} - 552,005 llamadas\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Estructura del Call Graph}\markdownRendererInterblockSeparator
+{}El programa sigue esta jerarquía principal:\markdownRendererInterblockSeparator
+{}\markdownRendererOlBeginTight
+\markdownRendererOlItemWithNumber{1}\markdownRendererStrongEmphasis{\markdownRendererCodeSpan{main()}} → \markdownRendererCodeSpan{EKF\markdownRendererUnderscore{}GEOS3()} (98.6\markdownRendererPercentSign{} del tiempo total)\markdownRendererOlItemEnd 
+\markdownRendererOlItemWithNumber{2}\markdownRendererStrongEmphasis{\markdownRendererCodeSpan{EKF\markdownRendererUnderscore{}GEOS3()}} ejecuta:\markdownRendererOlItemEnd 
+\markdownRendererOlEndTight \markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererCodeSpan{DEInteg()} - 94 veces (91\markdownRendererPercentSign{} del tiempo)\markdownRendererUlItemEnd 
+\markdownRendererUlItem Filtro de Kalman con \markdownRendererCodeSpan{MeasUpdate()} y \markdownRendererCodeSpan{TimeUpdate()}\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}\markdownRendererOlBeginTight
+\markdownRendererOlItemWithNumber{3}\markdownRendererStrongEmphasis{\markdownRendererCodeSpan{DEInteg()}} llama intensivamente a:\markdownRendererOlItemEnd 
+\markdownRendererOlEndTight \markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererCodeSpan{VarEqn()} - 2,374 veces \markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererCodeSpan{Accel()} - 2,564 veces\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Cuellos de Botella Identificados}\markdownRendererInterblockSeparator
+{}\markdownRendererSectionBegin
+\markdownRendererHeadingFive{1. Acceso a Matrices (21.22\markdownRendererPercentSign{} tiempo total)}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem 141+ millones de accesos a elementos de matriz\markdownRendererUlItemEnd 
+\markdownRendererUlItem Overhead significativo de la indexación base-1\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{2. Transformaciones Astronómicas (26.39\markdownRendererPercentSign{})}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererCodeSpan{IERS()} para correcciones Earth Orientation Parameters\markdownRendererUlItemEnd 
+\markdownRendererUlItem Cálculos repetitivos de precesión/nutación\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFive{3. Cálculos Gravitacionales (29.17\markdownRendererPercentSign{})}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererCodeSpan{AccelHarmonic()} + \markdownRendererCodeSpan{Legendre()} para el modelo gravitacional\markdownRendererUlItemEnd 
+\markdownRendererUlItem 19,182 evaluaciones de polinomios de Legendre\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Observaciones Técnicas}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Overhead de la clase Matrix}: La implementación de matrix hecha para asemejarse al funcionamiento de matlab genera muchas llamadas\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Algoritmos astronómicos}: Muy intensivos computacionalmente pero necesarios para precisión\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Gestión de memoria}: 552K creaciones/destrucciones de matrices sin memory leaks aparentes\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererStrongEmphasis{Filtro de Kalman}: Funcionando correctamente con 138 actualizaciones de medidas\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}
+\markdownRendererSectionEnd \markdownRendererSectionBegin
+\markdownRendererHeadingFour{Limitaciones del Análisis}\markdownRendererInterblockSeparator
+{}El análisis muestra un sistema bien estructurado donde el tiempo se gasta apropiadamente en cálculos científicos complejos, no en ineficiencias obvias del código, aparte de Matrix.
+\markdownRendererSectionEnd 
+\markdownRendererSectionEnd \markdownRendererDocumentEnd

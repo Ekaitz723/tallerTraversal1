@@ -268,7 +268,7 @@ void test_EKF_GEOS3_error_bounds()
 {
     // std::cout << "Testing error bounds and accuracy..." << std::endl;
     
-    EKFResults* results = get_ekf_results();
+    const EKFResults* results = get_ekf_results();
     
     // Compare with true values from MATLAB code
     double Y_true[6] = {5753.173e3, 2673.361e3, 3440.304e3, 4.324207e3, -1.924299e3, -5.728216e3};
@@ -576,7 +576,7 @@ void test_EKF_GEOS3_performance()
     assert(estimated_memory_mb < 100);  // Should use less than 100 MB
     
     // Test actual execution to verify performance
-    EKFResults* results = get_ekf_results();
+    const EKFResults* results = get_ekf_results();
     
     // Verify reasonable execution completed
     assert(results != nullptr);

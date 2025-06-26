@@ -11,12 +11,12 @@ class Matrix
         static Matrix row_vector(int n); // Para vector fila
         Matrix(int fil, int col);
         Matrix(double x, double y, double z); // Para vector de 3 elementos (vertical)
-        Matrix(int fil, int col, double v[], int n); // se introduce por columnas (se ve transpuesto en v[])
+        Matrix(int fil, int col, const double v[], int n); // se introduce por columnas (se ve transpuesto en v[])
         Matrix(const Matrix& m);
         void assign_column(int col_index, const Matrix& v);
-        void assign_column(int col_index, double* data, int datasize);
+        void assign_column(int col_index, const double* data, int datasize);
         void assign_row(int row_index, const Matrix& v);
-        void assign_row(int row_index, double* data, int datasize);
+        void assign_row(int row_index, const double* data, int datasize);
         ~Matrix();
 
         // eye(int n) crea una matriz identidad de nxn, usando eye(conts int n)

@@ -23,6 +23,6 @@
 //
 //--------------------------------------------------------------------------
 Matrix Cheb3D(double t, int N, double Ta, double Tb, 
-              double Cx[], double Cy[], double Cz[]);
+              const double Cx[], const double Cy[], const double Cz[]);
 
 #endif

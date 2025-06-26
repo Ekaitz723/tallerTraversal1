@@ -8,7 +8,7 @@ int main()
     EKFResults *results = EKF_GEOS3();
     auto fin = std::chrono::high_resolution_clock::now();
     auto duracion = std::chrono::duration_cast<std::chrono::microseconds>(fin-inicio);
-    std::cout << "Tiempo (ms): " << duracion.count() << "ms\n";
+    std::cout << "Tiempo (microsegundos): " << duracion.count() << "us\n";
 
     // if (results == nullptr) {
     //     printf("Error: EKF_GEOS3 devuelve null.\n");

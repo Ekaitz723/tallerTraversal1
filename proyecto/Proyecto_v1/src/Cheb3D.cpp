@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 Matrix Cheb3D(double t, int N, double Ta, double Tb, 
-              double Cx[], double Cy[], double Cz[])
+              const double Cx[], const double Cy[], const double Cz[])
 {
     if ((t < Ta) || (Tb < t)) {
         throw std::runtime_error("ERROR: Time out of range in Cheb3D::Value");
@@ -17,7 +17,7 @@ Matrix Cheb3D(double t, int N, double Ta, double Tb,
     double f2[3] = {0.0, 0.0, 0.0};
     
     for (int i = N-1; i >= 1; i--) {
-        double old_f1[3] = {f1[0], f1[1], f1[2]};
+        const double old_f1[3] = {f1[0], f1[1], f1[2]};
         
         f1[0] = 2*tau*f1[0] - f2[0] + Cx[i];
         f1[1] = 2*tau*f1[1] - f2[1] + Cy[i];

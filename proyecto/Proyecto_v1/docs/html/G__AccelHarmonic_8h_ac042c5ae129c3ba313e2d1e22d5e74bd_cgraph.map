@@ -1,0 +1,17 @@
+<map id="G_AccelHarmonic" name="G_AccelHarmonic">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,129,143,155"/>
+<area shape="rect" id="Node000002" href="$AccelHarmonic_8cpp.html#ab2824f250f0ceee23f7746c738631c61" title=" " alt="" coords="215,80,335,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,127,209,106,210,111,127,132"/>
+<area shape="rect" id="Node000006" href="$classMatrix.html#ab50137e9069c4d6e10261e52c8e489bc" title=" " alt="" coords="191,153,360,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="143,148,177,152,177,157,143,153"/>
+<area shape="rect" id="Node000003" href="$Legendre_8cpp.html#a1149431bd3a85d8d47063d2dc88e4c7c" title=" " alt="" coords="435,5,517,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="308,77,407,40,426,33,427,38,409,44,310,82"/>
+<area shape="rect" id="Node000004" href="$classMatrix.html#a55a5708512effe359ab294bfe61dfcfc" title=" " alt="" coords="423,55,529,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="335,82,409,73,409,78,336,88"/>
+<area shape="rect" id="Node000005" href="$classMatrix.html#a759661b75b9681f3a89ff75e27933b3a" title=" " alt="" coords="408,104,544,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="336,97,395,104,394,110,335,102"/>
+<area shape="rect" id="Node000007" href="$classMatrix.html#a88e35a3795f98d4cb63f01c647024996" title=" " alt="" coords="414,153,538,179"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="360,163,400,163,400,169,360,169"/>
+<area shape="rect" id="Node000008" href="$classMatrix.html#ae824193c636865bf2bddda04f423ca95" title=" " alt="" coords="427,203,525,228"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="328,176,414,198,413,203,327,181"/>
+</map>

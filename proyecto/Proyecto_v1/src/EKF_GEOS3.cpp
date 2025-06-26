@@ -383,7 +383,7 @@ EKFResults* EKF_GEOS3()
     
     Matrix Y0 = DEInteg(Accel, 0, -(obs(46,1) - obs(1,1)) * 86400.0, 1e-13, 1e-6, 6, Y);
     
-    double Y_true[6] = {5753.173e3, 2673.361e3, 3440.304e3, 4.324207e3, -1.924299e3, -5.728216e3};
+    const double Y_true[6] = {5753.173e3, 2673.361e3, 3440.304e3, 4.324207e3, -1.924299e3, -5.728216e3};
     
     results->Y0 = new Matrix(Y0);
     results->P = new Matrix(P);

@@ -27,10 +27,10 @@ Matrix DEInteg(Matrix (*func)(double, const Matrix&), double t, double tout,
     double told = 0.0;
     
     // Powers of two (two(n)=2^n)
-    double two[14] = {1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0,
+    const double two[14] = {1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0,
                       256.0, 512.0, 1024.0, 2048.0, 4096.0, 8192.0};
     
-    double gstr[14] = {1.0, 0.5, 0.0833, 0.0417, 0.0264, 0.0188,
+    const double gstr[14] = {1.0, 0.5, 0.0833, 0.0417, 0.0264, 0.0188,
                        0.0143, 0.0114, 0.00936, 0.00789, 0.00679,
                        0.00592, 0.00524, 0.00468};
     
@@ -81,8 +81,8 @@ Matrix DEInteg(Matrix (*func)(double, const Matrix&), double t, double tout,
     double epsilon = std::max(relerr, abserr);
     
     if ((relerr < 0.0) || (abserr < 0.0) || (epsilon <= 0.0) ||
-        (State_ > DE_INVPARAM)) {
-        State_ = DE_INVPARAM;
+        (State_ > DE_INVPARAM) || (State_ != DE_INIT && t!=told)) {
+            State_ = DE_INVPARAM;
         return yy;
     }
     

@@ -20,7 +20,7 @@
 #include <cstring>
 
 // root en matlab
-double find_largest_real_root(double poly[9])
+double find_largest_real_root(const double poly[9])
 {
     double r_start = 1.0;
     double r_max = 1e8;

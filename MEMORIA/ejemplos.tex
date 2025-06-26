@@ -1,0 +1,67 @@
+Indice:
+Nota importante
+Tiempo estimado
+markdown inline
+markdown documento
+separador secciones
+
+
+
+\begin{infobox}[Nota importante]
+    Los documentos Markdown han sido procesados automáticamente. Algunas características específicas de Markdown pueden haberse adaptado al formato \LaTeX{}.
+\end{infobox}
+
+
+\begin{warningbox}[Atencio]
+    Los documentos Markdown han sido procesados automáticamente. Algunas características específicas de Markdown pueden haberse adaptado al formato \LaTeX{}.
+\end{warningbox} 
+
+
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            texto & dato & dato \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa.
+    \end{center}
+% }
+
+
+\markdownSetup{shiftHeadings = 0}
+\begin{markdown}
+\end{markdown}
+
+
+\section{Nombre del Documento}
+\markdownSetup{shiftHeadings = 0}
+\markdownInput{archivo.md}
+
+
+\separadorseccion
+
+
+\subsection{}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+             &  minutos &  minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+        \newline
+        Tiempo real notablemente diferente al tiempo estimado debido a problemas tecnicos
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P/aaaaa.md}

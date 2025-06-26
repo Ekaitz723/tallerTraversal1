@@ -1,0 +1,387 @@
+Checking src/Accel.cpp ...
+1/44 files checked 2% done
+Checking src/AccelHarmonic.cpp ...
+2/44 files checked 4% done
+Checking src/AccelPointMass.cpp ...
+3/44 files checked 5% done
+Checking src/AzElPa.cpp ...
+4/44 files checked 6% done
+Checking src/Cheb3D.cpp ...
+src/Cheb3D.cpp:8:22: style: Parameter 'Cx' can be declared as const array [constParameter]
+              double Cx[], double Cy[], double Cz[])
+                     ^
+src/Cheb3D.cpp:8:35: style: Parameter 'Cy' can be declared as const array [constParameter]
+              double Cx[], double Cy[], double Cz[])
+                                  ^
+src/Cheb3D.cpp:8:48: style: Parameter 'Cz' can be declared as const array [constParameter]
+              double Cx[], double Cy[], double Cz[])
+                                               ^
+src/Cheb3D.cpp:20:16: style: Variable 'old_f1' can be declared as const array [constVariable]
+        double old_f1[3] = {f1[0], f1[1], f1[2]};
+               ^
+5/44 files checked 7% done
+Checking src/DEInteg.cpp ...
+src/DEInteg.cpp:84:17: style: Condition 'State_>DE_INVPARAM' is always false [knownConditionTrueFalse]
+        (State_ > DE_INVPARAM)) {
+                ^
+src/DEInteg.cpp:25:18: note: Assignment 'State_=DE_INIT', assigned value is 1
+    int State_ = DE_INIT;
+                 ^
+src/DEInteg.cpp:76:11: note: Assuming condition is false
+    if (t == tout) {
+          ^
+src/DEInteg.cpp:84:17: note: Condition 'State_>DE_INVPARAM' is always false
+        (State_ > DE_INVPARAM)) {
+                ^
+src/DEInteg.cpp:27:12: style: The scope of the variable 'told' can be reduced. [variableScope]
+    double told = 0.0;
+           ^
+src/DEInteg.cpp:103:10: style: The scope of the variable 'stiff' can be reduced. [variableScope]
+    bool stiff = false;
+         ^
+src/DEInteg.cpp:107:32: style: The scope of the variable 'OldPermit' can be reduced. [variableScope]
+    bool start, phase1, nornd, OldPermit = true, crash;
+                               ^
+src/DEInteg.cpp:112:31: style: The scope of the variable 'erkp1' can be reduced. [variableScope]
+    double erkm2, erkm1, erk, erkp1, err, absh;
+                              ^
+src/DEInteg.cpp:141:22: style: Local variable 'i' shadows outer variable [shadowVariable]
+            for (int i = 1; i <= n_eqn; i++) {
+                     ^
+src/DEInteg.cpp:120:13: note: Shadowed declaration
+    int ki, i, j, l, iq;
+            ^
+src/DEInteg.cpp:141:22: note: Shadow variable
+            for (int i = 1; i <= n_eqn; i++) {
+                     ^
+src/DEInteg.cpp:33:12: style: Variable 'gstr' can be declared as const array [constVariable]
+    double gstr[14] = {1.0, 0.5, 0.0833, 0.0417, 0.0264, 0.0188,
+           ^
+src/DEInteg.cpp:30:12: style: Variable 'two' can be declared as const array [constVariable]
+    double two[14] = {1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0,
+           ^
+src/DEInteg.cpp:21:27: style: Variable 'DE_NUMSTEPS' is assigned a value that is never used. [unreadVariable]
+    const int DE_NUMSTEPS = 4;
+                          ^
+src/DEInteg.cpp:22:24: style: Variable 'DE_STIFF' is assigned a value that is never used. [unreadVariable]
+    const int DE_STIFF = 5;
+                       ^
+src/DEInteg.cpp:27:17: style: Variable 'told' is assigned a value that is never used. [unreadVariable]
+    double told = 0.0;
+                ^
+src/DEInteg.cpp:85:16: style: Variable 'State_' is assigned a value that is never used. [unreadVariable]
+        State_ = DE_INVPARAM;
+               ^
+src/DEInteg.cpp:103:16: style: Variable 'stiff' is assigned a value that is never used. [unreadVariable]
+    bool stiff = false;
+               ^
+src/DEInteg.cpp:107:42: style: Variable 'OldPermit' is assigned a value that is never used. [unreadVariable]
+    bool start, phase1, nornd, OldPermit = true, crash;
+                                         ^
+src/DEInteg.cpp:125:11: style: Variable 'ifail' is assigned a value that is never used. [unreadVariable]
+    ifail = 0;
+          ^
+src/DEInteg.cpp:126:11: style: Variable 'crash' is assigned a value that is never used. [unreadVariable]
+    crash = false;
+          ^
+src/DEInteg.cpp:131:12: style: Variable 'delsgn' is assigned a value that is never used. [unreadVariable]
+    delsgn = sign_(1.0, del);
+           ^
+src/DEInteg.cpp:186:20: style: Variable 'State_' is assigned a value that is never used. [unreadVariable]
+            State_ = DE_DONE;    // Set return code
+                   ^
+src/DEInteg.cpp:187:18: style: Variable 'told' is assigned a value that is never used. [unreadVariable]
+            told = tout;         // Store independent variable
+                 ^
+src/DEInteg.cpp:188:23: style: Variable 'OldPermit' is assigned a value that is never used. [unreadVariable]
+            OldPermit = PermitTOUT;
+                      ^
+src/DEInteg.cpp:200:20: style: Variable 'State_' is assigned a value that is never used. [unreadVariable]
+            State_ = DE_DONE;         // Set return code
+                   ^
+src/DEInteg.cpp:201:18: style: Variable 'told' is assigned a value that is never used. [unreadVariable]
+            told = tout;              // Store independent variable
+                 ^
+src/DEInteg.cpp:202:23: style: Variable 'OldPermit' is assigned a value that is never used. [unreadVariable]
+            OldPermit = PermitTOUT;
+                      ^
+src/DEInteg.cpp:223:15: style: Variable 'h' is assigned a value that is never used. [unreadVariable]
+            h = sign_(fouru * std::abs(x), h);
+              ^
+src/DEInteg.cpp:224:19: style: Variable 'crash' is assigned a value that is never used. [unreadVariable]
+            crash = true;
+                  ^
+src/DEInteg.cpp:246:21: style: Variable 'epsilon' is assigned a value that is never used. [unreadVariable]
+            epsilon = 2.0 * round * (1.0 + fouru);
+                    ^
+src/DEInteg.cpp:247:19: style: Variable 'crash' is assigned a value that is never used. [unreadVariable]
+            crash = true;
+                  ^
+src/DEInteg.cpp:532:27: style: Variable 'crash' is assigned a value that is never used. [unreadVariable]
+                    crash = true;
+                          ^
+src/DEInteg.cpp:533:23: style: Variable 'h' is assigned a value that is never used. [unreadVariable]
+                    h = sign_(fouru * std::abs(x), h);
+                      ^
+src/DEInteg.cpp:534:29: style: Variable 'epsilon' is assigned a value that is never used. [unreadVariable]
+                    epsilon = epsilon * 2.0;
+                            ^
+src/DEInteg.cpp:658:20: style: Variable 'State_' is assigned a value that is never used. [unreadVariable]
+            State_ = DE_BADACC;
+                   ^
+src/DEInteg.cpp:659:20: style: Variable 'relerr' is assigned a value that is never used. [unreadVariable]
+            relerr = epsilon * releps;       // Modify relative and absolute
+                   ^
+src/DEInteg.cpp:660:20: style: Variable 'abserr' is assigned a value that is never used. [unreadVariable]
+            abserr = epsilon * abseps;       // accuracy requirements
+                   ^
+src/DEInteg.cpp:662:18: style: Variable 'told' is assigned a value that is never used. [unreadVariable]
+            told = x;
+                 ^
+src/DEInteg.cpp:663:23: style: Variable 'OldPermit' is assigned a value that is never used. [unreadVariable]
+            OldPermit = true;
+                      ^
+src/DEInteg.cpp:676:19: style: Variable 'stiff' is assigned a value that is never used. [unreadVariable]
+            stiff = true;
+                  ^
+6/44 files checked 16% done
+Checking src/EKF_GEOS3.cpp ...
+src/EKF_GEOS3.cpp:386:12: style: Variable 'Y_true' can be declared as const array [constVariable]
+    double Y_true[6] = {5753.173e3, 2673.361e3, 3440.304e3, 4.324207e3, -1.924299e3, -5.728216e3};
+           ^
+7/44 files checked 21% done
+Checking src/EKF_GEOS3_test.cpp ...
+src/EKF_GEOS3_test.cpp:271:17: style: Variable 'results' can be declared as pointer to const [constVariablePointer]
+    EKFResults* results = get_ekf_results();
+                ^
+src/EKF_GEOS3_test.cpp:579:17: style: Variable 'results' can be declared as pointer to const [constVariablePointer]
+    EKFResults* results = get_ekf_results();
+                ^
+src/EKF_GEOS3_test.cpp:274:22: style: Variable 'Y_true' is assigned a value that is never used. [unreadVariable]
+    double Y_true[6] = {5753.173e3, 2673.361e3, 3440.304e3, 4.324207e3, -1.924299e3, -5.728216e3};
+                     ^
+8/44 files checked 30% done
+Checking src/EccAnom.cpp ...
+9/44 files checked 31% done
+Checking src/EqnEquinox.cpp ...
+10/44 files checked 32% done
+Checking src/Frac.cpp ...
+11/44 files checked 33% done
+Checking src/GHAMatrix.cpp ...
+src/GHAMatrix.cpp:15:21: style: Variable 'pi' is assigned a value that is never used. [unreadVariable]
+    const double pi = M_PI;
+                    ^
+12/44 files checked 34% done
+Checking src/G_AccelHarmonic.cpp ...
+src/G_AccelHarmonic.cpp:23:37: style: Same expression on both sides of '/'. [duplicateExpression]
+        Matrix grad_col = da * (1.0 / d);
+                                    ^
+src/G_AccelHarmonic.cpp:9:17: note: 'd' is assigned value '1.0' here.
+    double d = 1.0;
+                ^
+src/G_AccelHarmonic.cpp:23:37: note: Same expression on both sides of '/'.
+        Matrix grad_col = da * (1.0 / d);
+                                    ^
+13/44 files checked 35% done
+Checking src/Geodetic.cpp ...
+14/44 files checked 37% done
+Checking src/IERS.cpp ...
+15/44 files checked 39% done
+Checking src/JPL_Eph_DE430.cpp ...
+src/JPL_Eph_DE430.cpp:314:12: style: The scope of the variable 'Mjd_TDB_test' can be reduced. [variableScope]
+    double Mjd_TDB_test = 51544.5;
+           ^
+16/44 files checked 44% done
+Checking src/LTC.cpp ...
+17/44 files checked 46% done
+Checking src/Legendre.cpp ...
+src/Legendre.cpp:51:37: style: Condition 'j+1<=m+1' is always true [knownConditionTrueFalse]
+                if (i-1 >= 1 && j+1 <= m+1 && (i+j-1) > 0 && (i-j-1) > 0 && (2*i-3) > 0) {
+                                    ^
+src/Legendre.cpp:48:61: note: Assuming condition 'j+1<=m+1' is true
+            if (i+1 <= n+1 && j+1 <= m+1 && i-1 >= 1 && j+1 <= m+1) {
+                                                            ^
+src/Legendre.cpp:51:37: note: Condition 'j+1<=m+1' is always true
+                if (i-1 >= 1 && j+1 <= m+1 && (i+j-1) > 0 && (i-j-1) > 0 && (2*i-3) > 0) {
+                                    ^
+src/Legendre.cpp:72:37: style: Condition 'j+1<=m+1' is always true [knownConditionTrueFalse]
+                if (i-1 >= 1 && j+1 <= m+1 && (i+j-1) > 0 && (i-j-1) > 0 && (2*i-3) > 0) {
+                                    ^
+src/Legendre.cpp:68:35: note: Assuming condition 'j+1<=m+1' is true
+            if (i+1 <= n+1 && j+1 <= m+1 && i-1 >= 1) {
+                                  ^
+src/Legendre.cpp:72:37: note: Condition 'j+1<=m+1' is always true
+                if (i-1 >= 1 && j+1 <= m+1 && (i+j-1) > 0 && (i-j-1) > 0 && (2*i-3) > 0) {
+                                    ^
+src/Legendre.cpp:48:54: style: Same expression 'j+1<=m+1' found multiple times in chain of '&&' operators. [duplicateExpression]
+            if (i+1 <= n+1 && j+1 <= m+1 && i-1 >= 1 && j+1 <= m+1) {
+                                                     ^
+18/44 files checked 47% done
+Checking src/Matrix.cpp ...
+src/Matrix.cpp:89:17: warning: Member variable 'Matrix::fil' is not assigned a value in 'Matrix::operator='. [operatorEqVarError]
+Matrix& Matrix::operator=(const Matrix& matrix2)
+                ^
+src/Matrix.cpp:89:17: warning: Member variable 'Matrix::col' is not assigned a value in 'Matrix::operator='. [operatorEqVarError]
+Matrix& Matrix::operator=(const Matrix& matrix2)
+                ^
+include/Matrix.h:10:9: style: Class 'Matrix' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+        Matrix(int fil); // Para vector columna
+        ^
+src/Matrix.cpp:395:9: style: Local variable 'size' shadows outer function [shadowFunction]
+    int size = a.size();
+        ^
+include/Matrix.h:53:13: note: Shadowed declaration
+        int size() const { return fil * col; }
+            ^
+src/Matrix.cpp:395:9: note: Shadow variable
+    int size = a.size();
+        ^
+src/Matrix.cpp:40:41: style: Parameter 'v' can be declared as const array [constParameter]
+Matrix::Matrix(int fil, int col, double v[], int n): fil(fil), col(col)
+                                        ^
+src/Matrix.cpp:347:51: style: Parameter 'data' can be declared as pointer to const [constParameterPointer]
+void Matrix::assign_column(int col_index, double* data, int datasize) {
+                                                  ^
+src/Matrix.cpp:361:48: style: Parameter 'data' can be declared as pointer to const [constParameterPointer]
+void Matrix::assign_row(int row_index, double* data, int datasize) {
+                                               ^
+19/44 files checked 55% done
+Checking src/MeanObliquity.cpp ...
+20/44 files checked 55% done
+Checking src/MeasUpdate.cpp ...
+21/44 files checked 57% done
+Checking src/Mjday.cpp ...
+22/44 files checked 58% done
+Checking src/Mjday_TDB.cpp ...
+src/Mjday_TDB.cpp:25:22: style: Variable 'eps' is assigned a value that is never used. [unreadVariable]
+    const double eps = 1e-9; // precision
+                     ^
+23/44 files checked 59% done
+Checking src/NutAngles.cpp ...
+24/44 files checked 63% done
+Checking src/NutMatrix.cpp ...
+25/44 files checked 64% done
+Checking src/PoleMatrix.cpp ...
+src/PoleMatrix.cpp:86:12: style: Same expression used in consecutive assignments of 'xp_max' and 'yp_max'. [duplicateAssignExpression]
+    double xp_max = 1.0 * arcsec_to_rad;
+           ^
+src/PoleMatrix.cpp:87:12: note: Same expression used in consecutive assignments of 'xp_max' and 'yp_max'.
+    double yp_max = 1.0 * arcsec_to_rad;
+           ^
+src/PoleMatrix.cpp:86:12: note: Same expression used in consecutive assignments of 'xp_max' and 'yp_max'.
+    double xp_max = 1.0 * arcsec_to_rad;
+           ^
+26/44 files checked 66% done
+Checking src/Position.cpp ...
+27/44 files checked 67% done
+Checking src/PrecMatrix.cpp ...
+28/44 files checked 69% done
+Checking src/R_x.cpp ...
+29/44 files checked 69% done
+Checking src/R_y.cpp ...
+30/44 files checked 70% done
+Checking src/R_z.cpp ...
+31/44 files checked 71% done
+Checking src/TestFramework.cpp ...
+32/44 files checked 71% done
+Checking src/TimeUpdate.cpp ...
+33/44 files checked 73% done
+Checking src/VarEqn.cpp ...
+34/44 files checked 75% done
+Checking src/angl.cpp ...
+35/44 files checked 77% done
+Checking src/anglesg.cpp ...
+src/anglesg.cpp:232:12: style: The scope of the variable 'rhoold1' can be reduced. [variableScope]
+    double rhoold1 = rho1;
+           ^
+src/anglesg.cpp:234:12: style: The scope of the variable 'rhoold3' can be reduced. [variableScope]
+    double rhoold3 = rho3;
+           ^
+src/anglesg.cpp:23:38: style: Parameter 'poly' can be declared as const array [constParameter]
+double find_largest_real_root(double poly[9])
+                                     ^
+src/anglesg.cpp:232:20: style: Variable 'rhoold1' is assigned a value that is never used. [unreadVariable]
+    double rhoold1 = rho1;
+                   ^
+src/anglesg.cpp:234:20: style: Variable 'rhoold3' is assigned a value that is never used. [unreadVariable]
+    double rhoold3 = rho3;
+                   ^
+36/44 files checked 83% done
+Checking src/elements.cpp ...
+37/44 files checked 86% done
+Checking src/gast.cpp ...
+38/44 files checked 87% done
+Checking src/gibbs.cpp ...
+39/44 files checked 92% done
+Checking src/gmst.cpp ...
+src/gmst.cpp:61:27: style: Variable 'expected_extra' is assigned a value that is never used. [unreadVariable]
+    double expected_extra = (4.0 / (24.0 * 60.0)) * pi2;  // ~4 min en radianes
+                          ^
+40/44 files checked 93% done
+Checking src/hgibbs.cpp ...
+src/hgibbs.cpp:105:12: error: Memory pointed to by 'v2' is freed twice. [doubleFree]
+    delete v2;
+           ^
+src/hgibbs.cpp:83:12: note: Memory pointed to by 'v2' is freed twice.
+    delete v2;
+           ^
+src/hgibbs.cpp:105:12: note: Memory pointed to by 'v2' is freed twice.
+    delete v2;
+           ^
+src/hgibbs.cpp:127:12: error: Memory pointed to by 'v2' is freed twice. [doubleFree]
+    delete v2;
+           ^
+src/hgibbs.cpp:83:12: note: Memory pointed to by 'v2' is freed twice.
+    delete v2;
+           ^
+src/hgibbs.cpp:127:12: note: Memory pointed to by 'v2' is freed twice.
+    delete v2;
+           ^
+src/hgibbs.cpp:149:12: error: Memory pointed to by 'v2' is freed twice. [doubleFree]
+    delete v2;
+           ^
+src/hgibbs.cpp:83:12: note: Memory pointed to by 'v2' is freed twice.
+    delete v2;
+           ^
+src/hgibbs.cpp:149:12: note: Memory pointed to by 'v2' is freed twice.
+    delete v2;
+           ^
+src/hgibbs.cpp:33:22: style: Variable 'dot_check' is assigned a value that is never used. [unreadVariable]
+    double dot_check = Matrix::dot(r1n, pn);
+                     ^
+41/44 files checked 96% done
+Checking src/sign_.cpp ...
+42/44 files checked 97% done
+Checking src/timediff.cpp ...
+src/timediff.cpp:13:19: style: Variable 'TT_GPS' is assigned a value that is never used. [unreadVariable]
+    double TT_GPS = TT_TAI - GPS_TAI;    // TT-GPS time difference [s]
+                  ^
+src/timediff.cpp:14:20: style: Variable 'TAI_GPS' is assigned a value that is never used. [unreadVariable]
+    double TAI_GPS = -GPS_TAI;           // TAI-GPS time difference [s]
+                   ^
+43/44 files checked 99% done
+Checking src/unit.cpp ...
+44/44 files checked 100% done
+src/Matrix.cpp:493:0: style: The function 'print' is never used. [unusedFunction]
+void Matrix::print()
+^
+src/anglesg.cpp:370:0: style: The function 'debug_anglesg_complete' is never used. [unusedFunction]
+void debug_anglesg_complete()
+^
+src/anglesg.cpp:489:0: style: The function 'debug_azimuts_diferentes' is never used. [unusedFunction]
+void debug_azimuts_diferentes() {
+^
+src/elements.cpp:64:0: style: The function 'elements_debug' is never used. [unusedFunction]
+void elements_debug(const Matrix& y)
+^
+src/gibbs.cpp:61:0: style: The function 'test_gibbs' is never used. [unusedFunction]
+void test_gibbs()
+^
+src/gibbs.cpp:203:0: style: The function 'debug_gibbs_direct' is never used. [unusedFunction]
+void debug_gibbs_direct()
+^
+src/hgibbs.cpp:56:0: style: The function 'hgibbs_debug_identico' is never used. [unusedFunction]
+void hgibbs_debug_identico()
+^
+nofile:0:0: information: Active checkers: 161/592 (use --checkers-report=<filename> to see details) [checkersReport]
+
