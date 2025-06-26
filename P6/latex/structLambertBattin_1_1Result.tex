@@ -1,0 +1,108 @@
+\doxysection{Lambert\+Battin\+::Result Struct Reference}
+\hypertarget{structLambertBattin_1_1Result}{}\label{structLambertBattin_1_1Result}\index{LambertBattin::Result@{LambertBattin::Result}}
+
+
+Estructura para almacenar el resultado del cálculo.  
+
+
+
+
+Collaboration diagram for Lambert\+Battin\+::Result\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{structLambertBattin_1_1Result__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLambertBattin_1_1Result_ab3eb901ab864c56e23fdf55255b90287}{Result}} (bool success\+\_\+=false)
+\begin{DoxyCompactList}\small\item\em Constructor para resultado fallido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLambertBattin_1_1Result_a3cc96bf283b1a0c260b64d544f19efdc}{Result}} (const \mbox{\hyperlink{classVector3D}{Vector3D}} \&vo\+\_\+, const \mbox{\hyperlink{classVector3D}{Vector3D}} \&v\+\_\+, bool success\+\_\+=true)
+\begin{DoxyCompactList}\small\item\em Constructor para resultado exitoso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector3D}{Vector3D}} \mbox{\hyperlink{structLambertBattin_1_1Result_a4900e23cbb5b7d4cef4444d1b890c4ae}{vo}}
+\begin{DoxyCompactList}\small\item\em Vector velocidad inicial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3D}{Vector3D}} \mbox{\hyperlink{structLambertBattin_1_1Result_abbe8e224184d8caacdd6930c26eca570}{v}}
+\begin{DoxyCompactList}\small\item\em Vector velocidad final. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structLambertBattin_1_1Result_aa4e79454dc13a0fb0603fc6dcd5d07ad}{success}}
+\begin{DoxyCompactList}\small\item\em Indica si el cálculo fue exitoso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estructura para almacenar el resultado del cálculo. 
+
+Contiene los vectores de velocidad inicial y final, además de un indicador de exito del cálculo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structLambertBattin_1_1Result_ab3eb901ab864c56e23fdf55255b90287}\label{structLambertBattin_1_1Result_ab3eb901ab864c56e23fdf55255b90287} 
+\index{LambertBattin::Result@{LambertBattin::Result}!Result@{Result}}
+\index{Result@{Result}!LambertBattin::Result@{LambertBattin::Result}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Lambert\+Battin\+::\+Result\+::\+Result (\begin{DoxyParamCaption}\item[{bool}]{success\+\_\+ = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor para resultado fallido. 
+
+\Hypertarget{structLambertBattin_1_1Result_a3cc96bf283b1a0c260b64d544f19efdc}\label{structLambertBattin_1_1Result_a3cc96bf283b1a0c260b64d544f19efdc} 
+\index{LambertBattin::Result@{LambertBattin::Result}!Result@{Result}}
+\index{Result@{Result}!LambertBattin::Result@{LambertBattin::Result}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Lambert\+Battin\+::\+Result\+::\+Result (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{vo\+\_\+,  }\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{v\+\_\+,  }\item[{bool}]{success\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor para resultado exitoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vo\+\_\+} & Vector velocidad inicial \\
+\hline
+{\em v\+\_\+} & Vector velocidad final \\
+\hline
+{\em success\+\_\+} & Estado del cálculo (true por defecto) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structLambertBattin_1_1Result_aa4e79454dc13a0fb0603fc6dcd5d07ad}\label{structLambertBattin_1_1Result_aa4e79454dc13a0fb0603fc6dcd5d07ad} 
+\index{LambertBattin::Result@{LambertBattin::Result}!success@{success}}
+\index{success@{success}!LambertBattin::Result@{LambertBattin::Result}}
+\doxysubsubsection{\texorpdfstring{success}{success}}
+{\footnotesize\ttfamily bool Lambert\+Battin\+::\+Result\+::success}
+
+
+
+Indica si el cálculo fue exitoso. 
+
+\Hypertarget{structLambertBattin_1_1Result_abbe8e224184d8caacdd6930c26eca570}\label{structLambertBattin_1_1Result_abbe8e224184d8caacdd6930c26eca570} 
+\index{LambertBattin::Result@{LambertBattin::Result}!v@{v}}
+\index{v@{v}!LambertBattin::Result@{LambertBattin::Result}}
+\doxysubsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3D}{Vector3D}} Lambert\+Battin\+::\+Result\+::v}
+
+
+
+Vector velocidad final. 
+
+\Hypertarget{structLambertBattin_1_1Result_a4900e23cbb5b7d4cef4444d1b890c4ae}\label{structLambertBattin_1_1Result_a4900e23cbb5b7d4cef4444d1b890c4ae} 
+\index{LambertBattin::Result@{LambertBattin::Result}!vo@{vo}}
+\index{vo@{vo}!LambertBattin::Result@{LambertBattin::Result}}
+\doxysubsubsection{\texorpdfstring{vo}{vo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3D}{Vector3D}} Lambert\+Battin\+::\+Result\+::vo}
+
+
+
+Vector velocidad inicial. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lambert__battin_8cpp}{lambert\+\_\+battin.\+cpp}}\end{DoxyCompactItemize}

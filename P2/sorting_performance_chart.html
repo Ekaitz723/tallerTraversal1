@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Quicksort 3D - Comparación Linear vs Logarítmica</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 10px;
+            background: white;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: calc(100vw - 20px);
+            height: calc(100vh - 20px);
+            border: 2px solid #333;
+            display: flex;
+        }
+        .chart-half {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            border-right: 1px solid #ccc;
+        }
+        .chart-half:last-child {
+            border-right: none;
+        }
+        .chart-title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.9);
+            padding: 5px 15px;
+            border-radius: 5px;
+            z-index: 100;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .legend {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.95);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            z-index: 100;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            font-size: 0.8em;
+            width: 80%;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+        .color-box {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 6px;
+            border: 1px solid #999;
+        }
+        .canvas-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Gráfica Linear -->
+        <div class="chart-half">
+            <div class="chart-title">Escala Linear</div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="color-box" style="background: #87ceeb;"></div>
+                    Python Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #4682b4;"></div>
+                    Python Nativo
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #ffa07a;"></div>
+                    C++ Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #dc143c;"></div>
+                    C++ STL
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #90ee90;"></div>
+                    C Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #228b22;"></div>
+                    C qsort
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #ffd700;"></div>
+                    Java Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #ff8c00;"></div>
+                    Java Arrays.sort
+                </div>
+            </div>
+            <div class="canvas-container" id="canvas-linear"></div>
+        </div>
+
+        <!-- Gráfica Logarítmica -->
+        <div class="chart-half">
+            <div class="chart-title">Escala Logarítmica</div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="color-box" style="background: #87ceeb;"></div>
+                    Python Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #4682b4;"></div>
+                    Python Nativo
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #ffa07a;"></div>
+                    C++ Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #dc143c;"></div>
+                    C++ STL
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #90ee90;"></div>
+                    C Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #228b22;"></div>
+                    C qsort
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #ffd700;"></div>
+                    Java Manual
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #ff8c00;"></div>
+                    Java Arrays.sort
+                </div>
+            </div>
+            <div class="canvas-container" id="canvas-log"></div>
+        </div>
+    </div>
+
+    <script>
+        let sceneLinear, sceneLog, cameraLinear, cameraLog, rendererLinear, rendererLog;
+
+        // Datos en milisegundos
+        const rawData = {
+            sizes: [10, 100, 1000, 10000, 100000, 1000000],
+            implementations: [
+                { name: 'Python Manual', data: [0.008, 0.050, 0.954, 10.766, 153.486, 2856.543], color: 0x87ceeb },
+                { name: 'Python Nativo', data: [0.003, 0.007, 0.084, 1.023, 17.044, 303.655], color: 0x4682b4 },
+                { name: 'C++ Manual', data: [0.000751, 0.018174, 0.251512, 1.4047, 20.1553, 213.803], color: 0xffa07a },
+                { name: 'C++ STL', data: [0.001392, 0.02142, 0.260177, 1.62315, 20.4335, 236.216], color: 0xdc143c },
+                { name: 'C Manual', data: [0.001, 0.005, 0.070, 0.901, 10.947, 152.702], color: 0x90ee90 },
+                { name: 'C qsort', data: [0.001, 0.005, 0.060, 0.828, 10.019, 84.551], color: 0x228b22 },
+                { name: 'Java Manual', data: [0.004, 0.029, 0.522, 1.199, 7.649, 80.180], color: 0xffd700 },
+                { name: 'Java Arrays.sort', data: [0.514, 0.035, 0.507, 4.091, 12.077, 113.459], color: 0xff8c00 }
+            ]
+        };
+
+        function initChart(container, isLog = false) {
+            // Scene setup
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xf8f8f8);
+
+            // Camera setup
+            const camera = new THREE.PerspectiveCamera(60, 0.5, 0.1, 1000);
+            camera.position.set(35, 40, 25);
+            camera.lookAt(0, 0, 0);
+
+            // Renderer setup
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            const containerElement = document.getElementById(container);
+            const width = containerElement.clientWidth;
+            const height = containerElement.clientHeight;
+            renderer.setSize(width, height);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            containerElement.appendChild(renderer.domElement);
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(30, 40, 20);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+
+            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.3);
+            directionalLight2.position.set(-20, 30, -15);
+            scene.add(directionalLight2);
+
+            // Crear barras
+            createBars(scene, isLog);
+
+            // Render
+            renderer.render(scene, camera);
+
+            return { scene, camera, renderer };
+        }
+
+        function createBars(scene, isLog) {
+            const maxTime = Math.max(...rawData.implementations.flatMap(impl => impl.data));
+            const scaleY = isLog ? 25 / Math.log10(maxTime + 1) : 25 / maxTime;
+
+            rawData.sizes.forEach((size, sizeIndex) => {
+                rawData.implementations.forEach((impl, implIndex) => {
+                    const time = impl.data[sizeIndex];
+                    const height = isLog ? Math.log10(time + 1) * scaleY : time * scaleY;
+                    
+                    const geometry = new THREE.BoxGeometry(1.2, height, 1.2);
+                    const material = new THREE.MeshLambertMaterial({ 
+                        color: impl.color,
+                        transparent: false
+                    });
+                    
+                    const bar = new THREE.Mesh(geometry, material);
+                    // Eje X invertido
+                    bar.position.set(
+                        (5 - sizeIndex) * 1.0 - 2.5,
+                        height / 2,
+                        implIndex * 1.0 - 3.5
+                    );
+                    bar.castShadow = true;
+                    bar.receiveShadow = true;
+                    
+                    scene.add(bar);
+                });
+            });
+
+            // Ejes
+            createAxes(scene);
+        }
+
+        function createAxes(scene) {
+            const axisLength = 30;
+            
+            // Eje X
+            const xAxisGeometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(-4, 0, -4.5),
+                new THREE.Vector3(4, 0, -4.5)
+            ]);
+            const xAxisMaterial = new THREE.LineBasicMaterial({ color: 0x333333, linewidth: 3 });
+            const xAxis = new THREE.Line(xAxisGeometry, xAxisMaterial);
+            scene.add(xAxis);
+
+            // Eje Y
+            const yAxisGeometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(-4, 0, -4.5),
+                new THREE.Vector3(-4, axisLength, -4.5)
+            ]);
+            const yAxisMaterial = new THREE.LineBasicMaterial({ color: 0x333333, linewidth: 3 });
+            const yAxis = new THREE.Line(yAxisGeometry, yAxisMaterial);
+            scene.add(yAxis);
+
+            // Eje Z
+            const zAxisGeometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(-4, 0, -4.5),
+                new THREE.Vector3(-4, 0, 4.5)
+            ]);
+            const zAxisMaterial = new THREE.LineBasicMaterial({ color: 0x333333, linewidth: 3 });
+            const zAxis = new THREE.Line(zAxisGeometry, zAxisMaterial);
+            scene.add(zAxis);
+        }
+
+        function onWindowResize() {
+            const containers = ['canvas-linear', 'canvas-log'];
+            const cameras = [cameraLinear, cameraLog];
+            const renderers = [rendererLinear, rendererLog];
+
+            containers.forEach((containerId, index) => {
+                const containerElement = document.getElementById(containerId);
+                const width = containerElement.clientWidth;
+                const height = containerElement.clientHeight;
+                
+                cameras[index].aspect = width / height;
+                cameras[index].updateProjectionMatrix();
+                renderers[index].setSize(width, height);
+                renderers[index].render(renderers[index].scene || sceneLinear, cameras[index]);
+            });
+        }
+
+        window.addEventListener('resize', onWindowResize);
+
+        // Inicializar ambas gráficas
+        window.addEventListener('load', () => {
+            const linearChart = initChart('canvas-linear', false);
+            const logChart = initChart('canvas-log', true);
+            
+            // Guardar referencias
+            sceneLinear = linearChart.scene;
+            cameraLinear = linearChart.camera;
+            rendererLinear = linearChart.renderer;
+            
+            sceneLog = logChart.scene;
+            cameraLog = logChart.camera;
+            rendererLog = logChart.renderer;
+        });
+    </script>
+</body>
+</html>

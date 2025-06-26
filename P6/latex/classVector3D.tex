@@ -1,0 +1,323 @@
+\doxysection{Vector3D Class Reference}
+\hypertarget{classVector3D}{}\label{classVector3D}\index{Vector3D@{Vector3D}}
+
+
+Clase para representar vectores 3D y operaciones vectoriales.  
+
+
+
+
+Collaboration diagram for Vector3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classVector3D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector3D_a0b11a8d75da427b27443d8a94d0d296c}{Vector3D}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto, inicializa el vector nulo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3D_a598fec7d0e90e87fc5391b8dc3fbdf52}{Vector3D}} (double x\+\_\+, double y\+\_\+, double z\+\_\+)
+\begin{DoxyCompactList}\small\item\em Constructor con componentes específicas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3D}{Vector3D}} \mbox{\hyperlink{classVector3D_ae5153e5e26852627ccea88d399e13c6e}{operator+}} (const \mbox{\hyperlink{classVector3D}{Vector3D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Suma de vectores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3D}{Vector3D}} \mbox{\hyperlink{classVector3D_a2d77fde2d4f484a639cb4dfd500c3540}{operator-\/}} (const \mbox{\hyperlink{classVector3D}{Vector3D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Resta de vectores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3D}{Vector3D}} \mbox{\hyperlink{classVector3D_af893e58e8f5c80bca3a9443210462ffe}{operator\texorpdfstring{$\ast$}{*}}} (double scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplicación por escalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3D}{Vector3D}} \mbox{\hyperlink{classVector3D_a78433674da73921ee1fd7e32670b1f69}{operator/}} (double scalar) const
+\begin{DoxyCompactList}\small\item\em División por escalar. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classVector3D_a0da987130c3ca5253ca428409798b1e6}{dot}} (const \mbox{\hyperlink{classVector3D}{Vector3D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Producto punto entre vectores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3D}{Vector3D}} \mbox{\hyperlink{classVector3D_af1b13ca0a65eea7431bfbcd96dcacdee}{cross}} (const \mbox{\hyperlink{classVector3D}{Vector3D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Producto cruz entre vectores. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classVector3D_a24325bbe91b61fb39734e48ef266276b}{magnitude}} () const
+\begin{DoxyCompactList}\small\item\em Calcula la magnitud (norma) del vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVector3D_a00b2343c8b1acee3b21c0f42a86a212c}{print}} () const
+\begin{DoxyCompactList}\small\item\em Imprime el vector en formato \mbox{[}x, y, z\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classVector3D_a3c086dfccfc57dd996e9b8600098a430}{x}}
+\item 
+double \mbox{\hyperlink{classVector3D_adcec384756103d26d1181e45d5a0fd78}{y}}
+\item 
+double \mbox{\hyperlink{classVector3D_a7321f3ff785f275c4d83f7d1b951752a}{z}}
+\begin{DoxyCompactList}\small\item\em Componentes del vector 3D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase para representar vectores 3D y operaciones vectoriales. 
+
+Esta clase encapsula las operaciones básicas de álgebra vectorial necesarias para los cálculos orbitales. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVector3D_a0b11a8d75da427b27443d8a94d0d296c}\label{classVector3D_a0b11a8d75da427b27443d8a94d0d296c} 
+\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{Vector3D()}{Vector3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vector3\+D\+::\+Vector3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor por defecto, inicializa el vector nulo. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3D_a0b11a8d75da427b27443d8a94d0d296c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_a598fec7d0e90e87fc5391b8dc3fbdf52}\label{classVector3D_a598fec7d0e90e87fc5391b8dc3fbdf52} 
+\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\index{Vector3D@{Vector3D}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{Vector3D()}{Vector3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector3\+D\+::\+Vector3D (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+,  }\item[{double}]{y\+\_\+,  }\item[{double}]{z\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor con componentes específicas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+} & Componente x \\
+\hline
+{\em y\+\_\+} & Componente y ~\newline
+ \\
+\hline
+{\em z\+\_\+} & Componente z \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVector3D_af1b13ca0a65eea7431bfbcd96dcacdee}\label{classVector3D_af1b13ca0a65eea7431bfbcd96dcacdee} 
+\index{Vector3D@{Vector3D}!cross@{cross}}
+\index{cross@{cross}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3D}{Vector3D}} Vector3\+D\+::cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Producto cruz entre vectores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector con el cual calcular el producto cruz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector resultado del producto cruz 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classVector3D_af1b13ca0a65eea7431bfbcd96dcacdee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3D_af1b13ca0a65eea7431bfbcd96dcacdee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_a0da987130c3ca5253ca428409798b1e6}\label{classVector3D_a0da987130c3ca5253ca428409798b1e6} 
+\index{Vector3D@{Vector3D}!dot@{dot}}
+\index{dot@{dot}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily double Vector3\+D\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Producto punto entre vectores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector con el cual calcular el producto punto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resultado del producto punto 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3D_a0da987130c3ca5253ca428409798b1e6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_a24325bbe91b61fb39734e48ef266276b}\label{classVector3D_a24325bbe91b61fb39734e48ef266276b} 
+\index{Vector3D@{Vector3D}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{magnitude()}{magnitude()}}
+{\footnotesize\ttfamily double Vector3\+D\+::magnitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calcula la magnitud (norma) del vector. 
+
+\begin{DoxyReturn}{Returns}
+Magnitud del vector 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3D_a24325bbe91b61fb39734e48ef266276b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_af893e58e8f5c80bca3a9443210462ffe}\label{classVector3D_af893e58e8f5c80bca3a9443210462ffe} 
+\index{Vector3D@{Vector3D}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3D}{Vector3D}} Vector3\+D\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplicación por escalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Valor escalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector escalado 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classVector3D_af893e58e8f5c80bca3a9443210462ffe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_ae5153e5e26852627ccea88d399e13c6e}\label{classVector3D_ae5153e5e26852627ccea88d399e13c6e} 
+\index{Vector3D@{Vector3D}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3D}{Vector3D}} Vector3\+D\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Suma de vectores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector a sumar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector resultado de la suma 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classVector3D_ae5153e5e26852627ccea88d399e13c6e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_a2d77fde2d4f484a639cb4dfd500c3540}\label{classVector3D_a2d77fde2d4f484a639cb4dfd500c3540} 
+\index{Vector3D@{Vector3D}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3D}{Vector3D}} Vector3\+D\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resta de vectores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Vector a restar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector resultado de la resta 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classVector3D_a2d77fde2d4f484a639cb4dfd500c3540_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_a78433674da73921ee1fd7e32670b1f69}\label{classVector3D_a78433674da73921ee1fd7e32670b1f69} 
+\index{Vector3D@{Vector3D}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3D}{Vector3D}} Vector3\+D\+::operator/ (\begin{DoxyParamCaption}\item[{double}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+División por escalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Valor escalar divisor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector dividido 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classVector3D_a78433674da73921ee1fd7e32670b1f69_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3D_a00b2343c8b1acee3b21c0f42a86a212c}\label{classVector3D_a00b2343c8b1acee3b21c0f42a86a212c} 
+\index{Vector3D@{Vector3D}!print@{print}}
+\index{print@{print}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Vector3\+D\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime el vector en formato \mbox{[}x, y, z\mbox{]}. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classVector3D_a3c086dfccfc57dd996e9b8600098a430}\label{classVector3D_a3c086dfccfc57dd996e9b8600098a430} 
+\index{Vector3D@{Vector3D}!x@{x}}
+\index{x@{x}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily double Vector3\+D\+::x}
+
+\Hypertarget{classVector3D_adcec384756103d26d1181e45d5a0fd78}\label{classVector3D_adcec384756103d26d1181e45d5a0fd78} 
+\index{Vector3D@{Vector3D}!y@{y}}
+\index{y@{y}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily double Vector3\+D\+::y}
+
+\Hypertarget{classVector3D_a7321f3ff785f275c4d83f7d1b951752a}\label{classVector3D_a7321f3ff785f275c4d83f7d1b951752a} 
+\index{Vector3D@{Vector3D}!z@{z}}
+\index{z@{z}!Vector3D@{Vector3D}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily double Vector3\+D\+::z}
+
+
+
+Componentes del vector 3D. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lambert__battin_8cpp}{lambert\+\_\+battin.\+cpp}}\end{DoxyCompactItemize}

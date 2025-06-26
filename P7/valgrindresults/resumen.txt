@@ -1,0 +1,58 @@
+=== RESUMEN DE MEMORIA ===
+Fecha: Mon Jun 23 07:41:13 CST 2025
+
+==381085== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+=== RESUMEN DE RENDIMIENTO ===
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out' (creator: callgrind-3.22.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 350055
+Trigger: Program termination
+Profiled target:  ../lambert_battin (PID 381096, part 1)
+Events recorded:  Ir sysCount sysTime
+Events shown:     Ir sysCount sysTime
+Event sort order: Ir sysCount sysTime
+Thresholds:       99 0 0
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir                 sysCount    sysTime      
+--------------------------------------------------------------------------------
+1,948,101 (100.0%) 84 (100.0%) 101 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir               sysCount    sysTime       file:function
+--------------------------------------------------------------------------------
+499,552 (25.64%)  .            .           ./elf/./elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+492,086 (25.26%)  .            .           ./elf/../sysdeps/generic/dl-new-hash.h:_dl_lookup_symbol_x
+184,685 ( 9.48%)  .            .           ./elf/./elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+146,417 ( 7.52%)  .            .           ./elf/./elf/dl-reloc.c:_dl_relocate_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+112,346 ( 5.77%)  .            .           ./elf/./elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+
+=== RESUMEN DE CACHE ===
+--------------------------------------------------------------------------------
+-- Metadata
+--------------------------------------------------------------------------------
+Invocation:       /usr/bin/cg_annotate cachegrind.out
+Command:          ../lambert_battin
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Threshold:        0.1%
+Annotation:       on
+
+--------------------------------------------------------------------------------
+-- Summary
+--------------------------------------------------------------------------------
+Ir________________ 
+
+1,956,569 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+-- File:function summary

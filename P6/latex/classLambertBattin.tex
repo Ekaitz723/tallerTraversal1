@@ -1,0 +1,141 @@
+\doxysection{Lambert\+Battin Class Reference}
+\hypertarget{classLambertBattin}{}\label{classLambertBattin}\index{LambertBattin@{LambertBattin}}
+
+
+Implementación del método de Lambert-\/\+Battin para el problema de dos puntos en órbita.  
+
+
+
+
+Collaboration diagram for Lambert\+Battin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classLambertBattin__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLambertBattin_1_1Result}{Result}}
+\begin{DoxyCompactList}\small\item\em Estructura para almacenar el resultado del cálculo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structLambertBattin_1_1Result}{Result}} \mbox{\hyperlink{classLambertBattin_a47fff27d3fe1f2fcc683589ccffe5cc2}{solve}} (const \mbox{\hyperlink{classVector3D}{Vector3D}} \&ro, const \mbox{\hyperlink{classVector3D}{Vector3D}} \&r, const std\+::string \&dm, double dtsec)
+\begin{DoxyCompactList}\small\item\em Resuelve el problema de Lambert-\/\+Battin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classLambertBattin_af4edd784121c3bfd5b7941114fbaac43}{seebatt}} (double v)
+\begin{DoxyCompactList}\small\item\em Función auxiliar de Battin para el cálculo iterativo. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classLambertBattin_a64cfb5dacba271d3ed7ab9af6bec40c3}{seebattk}} (double v)
+\begin{DoxyCompactList}\small\item\em Segunda función auxiliar de Battin para el cálculo iterativo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación del método de Lambert-\/\+Battin para el problema de dos puntos en órbita. 
+
+Esta clase resuelve el problema clásico de determinar la órbita que conecta dos vectores de posición en un tiempo dado, utilizando el método de Battin. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLambertBattin_af4edd784121c3bfd5b7941114fbaac43}\label{classLambertBattin_af4edd784121c3bfd5b7941114fbaac43} 
+\index{LambertBattin@{LambertBattin}!seebatt@{seebatt}}
+\index{seebatt@{seebatt}!LambertBattin@{LambertBattin}}
+\doxysubsubsection{\texorpdfstring{seebatt()}{seebatt()}}
+{\footnotesize\ttfamily static double Lambert\+Battin\+::seebatt (\begin{DoxyParamCaption}\item[{double}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Función auxiliar de Battin para el cálculo iterativo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Parámetro de entrada para la serie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor calculado de la función 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLambertBattin_af4edd784121c3bfd5b7941114fbaac43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLambertBattin_a64cfb5dacba271d3ed7ab9af6bec40c3}\label{classLambertBattin_a64cfb5dacba271d3ed7ab9af6bec40c3} 
+\index{LambertBattin@{LambertBattin}!seebattk@{seebattk}}
+\index{seebattk@{seebattk}!LambertBattin@{LambertBattin}}
+\doxysubsubsection{\texorpdfstring{seebattk()}{seebattk()}}
+{\footnotesize\ttfamily static double Lambert\+Battin\+::seebattk (\begin{DoxyParamCaption}\item[{double}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Segunda función auxiliar de Battin para el cálculo iterativo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Parámetro de entrada para la serie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor calculado de la función 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLambertBattin_a64cfb5dacba271d3ed7ab9af6bec40c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLambertBattin_a47fff27d3fe1f2fcc683589ccffe5cc2}\label{classLambertBattin_a47fff27d3fe1f2fcc683589ccffe5cc2} 
+\index{LambertBattin@{LambertBattin}!solve@{solve}}
+\index{solve@{solve}!LambertBattin@{LambertBattin}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structLambertBattin_1_1Result}{Result}} Lambert\+Battin\+::solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{ro,  }\item[{const \mbox{\hyperlink{classVector3D}{Vector3D}} \&}]{r,  }\item[{const std\+::string \&}]{dm,  }\item[{double}]{dtsec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Resuelve el problema de Lambert-\/\+Battin. 
+
+Calcula los vectores de velocidad necesarios para ir desde la posición inicial ro hasta la posición final r en el tiempo especificado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ro} & Vector posición inicial (m) \\
+\hline
+{\em r} & Vector posición final (m) \\
+\hline
+{\em dm} & Dirección del movimiento ("{}pro"{} para prograde, "{}retro"{} para retrógrado) \\
+\hline
+{\em dtsec} & Tiempo de vuelo en segundos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estructura \doxylink{structLambertBattin_1_1Result}{Result} con las velocidades calculadas 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLambertBattin_a47fff27d3fe1f2fcc683589ccffe5cc2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLambertBattin_a47fff27d3fe1f2fcc683589ccffe5cc2_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lambert__battin_8cpp}{lambert\+\_\+battin.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+<map id="LambertBattin::solve" name="LambertBattin::solve">
+<area shape="rect" id="Node000001" title="Resuelve el problema de Lambert&#45;Battin." alt="" coords="5,104,164,129"/>
+<area shape="rect" id="Node000002" href="$classVector3D.html#af1b13ca0a65eea7431bfbcd96dcacdee" title="Producto cruz entre vectores." alt="" coords="241,5,363,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,102,150,71,211,40,231,32,233,37,213,44,153,76,105,106"/>
+<area shape="rect" id="Node000004" href="$classVector3D.html#a0da987130c3ca5253ca428409798b1e6" title="Producto punto entre vectores." alt="" coords="247,55,357,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,101,233,80,234,85,142,107"/>
+<area shape="rect" id="Node000005" href="$classVector3D.html#a24325bbe91b61fb39734e48ef266276b" title="Calcula la magnitud (norma) del vector." alt="" coords="223,104,381,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="164,114,209,114,209,119,164,119"/>
+<area shape="rect" id="Node000006" href="$classLambertBattin.html#af4edd784121c3bfd5b7941114fbaac43" title="Función auxiliar de Battin para el cálculo iterativo." alt="" coords="216,153,388,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="142,127,233,148,231,153,141,132"/>
+<area shape="rect" id="Node000007" href="$classLambertBattin.html#a64cfb5dacba271d3ed7ab9af6bec40c3" title="Segunda función auxiliar de Battin para el cálculo iterativo." alt="" coords="212,203,392,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="106,127,153,157,213,188,236,196,234,201,211,192,151,162,103,132"/>
+<area shape="rect" id="Node000003" href="$classVector3D.html#a0b11a8d75da427b27443d8a94d0d296c" title="Constructor por defecto, inicializa el vector nulo." alt="" coords="440,5,588,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,15,426,15,426,21,364,21"/>
+</map>
