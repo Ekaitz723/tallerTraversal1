@@ -1,0 +1,20 @@
+Comparing sorting algorithms...
+
+Manual Quicksort (n=10): 0.000001 seconds
+Stdlib Qsort (n=10): 0.000001 seconds
+
+Manual Quicksort (n=100): 0.000005 seconds
+Stdlib Qsort (n=100): 0.000005 seconds
+
+Manual Quicksort (n=1000): 0.000070 seconds
+Stdlib Qsort (n=1000): 0.000060 seconds
+
+Manual Quicksort (n=10000): 0.000901 seconds
+Stdlib Qsort (n=10000): 0.000828 seconds
+
+Manual Quicksort (n=100000): 0.010947 seconds
+Stdlib Qsort (n=100000): 0.010019 seconds
+
+Manual Quicksort (n=1000000): 0.152702 seconds
+Stdlib Qsort (n=1000000): 0.084551 seconds
+

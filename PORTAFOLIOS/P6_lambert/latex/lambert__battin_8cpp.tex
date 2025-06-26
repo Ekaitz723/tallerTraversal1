@@ -1,0 +1,188 @@
+\doxysection{lambert\+\_\+battin.\+cpp File Reference}
+\hypertarget{lambert__battin_8cpp}{}\label{lambert__battin_8cpp}\index{lambert\_battin.cpp@{lambert\_battin.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+Include dependency graph for lambert\+\_\+battin.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lambert__battin_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVector3D}{Vector3D}}
+\begin{DoxyCompactList}\small\item\em Clase para representar vectores 3D y operaciones vectoriales. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLambertBattin}{Lambert\+Battin}}
+\begin{DoxyCompactList}\small\item\em Implementación del método de Lambert-\/\+Battin para el problema de dos puntos en órbita. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLambertBattin_1_1Result}{Lambert\+Battin\+::\+Result}}
+\begin{DoxyCompactList}\small\item\em Estructura para almacenar el resultado del cálculo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lambert__battin_8cpp_af640c31a6218218f93e7860b4e8752ed}{test\+\_\+lambert\+\_\+battin}} ()
+\begin{DoxyCompactList}\small\item\em Función de prueba para la implementación de Lambert-\/\+Battin. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lambert__battin_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Función principal del programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr double \mbox{\hyperlink{lambert__battin_8cpp_a6d84780a435a6df73fbc83b7f2aae726}{MU}} = 3.\+986004418e14
+\begin{DoxyCompactList}\small\item\em Constante gravitacional estándar de la Tierra (m³/s²) \end{DoxyCompactList}\item 
+constexpr double \mbox{\hyperlink{lambert__battin_8cpp_a5d77c9de1e9d55ee7d4b489ec69f4c43}{SMALL}} = 1.\+0e-\/6
+\begin{DoxyCompactList}\small\item\em Valor pequeño para comparaciones numéricas. \end{DoxyCompactList}\item 
+const std\+::array$<$ double, 21 $>$ \mbox{\hyperlink{lambert__battin_8cpp_a871f2625f1aee9cb735e3c6d1ace9506}{c\+\_\+coeffs}}
+\begin{DoxyCompactList}\small\item\em Coeficientes c para la serie de Battin. \end{DoxyCompactList}\item 
+const std\+::array$<$ double, 21 $>$ \mbox{\hyperlink{lambert__battin_8cpp_a1c410b70f0ed4f75e88e5c7be5e3b214}{d\+\_\+coeffs}}
+\begin{DoxyCompactList}\small\item\em Coeficientes d para la serie de Battin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lambert__battin_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{lambert__battin_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{lambert\_battin.cpp@{lambert\_battin.cpp}!main@{main}}
+\index{main@{main}!lambert\_battin.cpp@{lambert\_battin.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Función principal del programa. 
+
+\begin{DoxyReturn}{Returns}
+Código de salida del programa 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lambert__battin_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lambert__battin_8cpp_af640c31a6218218f93e7860b4e8752ed}\label{lambert__battin_8cpp_af640c31a6218218f93e7860b4e8752ed} 
+\index{lambert\_battin.cpp@{lambert\_battin.cpp}!test\_lambert\_battin@{test\_lambert\_battin}}
+\index{test\_lambert\_battin@{test\_lambert\_battin}!lambert\_battin.cpp@{lambert\_battin.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_lambert\_battin()}{test\_lambert\_battin()}}
+{\footnotesize\ttfamily void test\+\_\+lambert\+\_\+battin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Función de prueba para la implementación de Lambert-\/\+Battin. 
+
+Ejecuta un caso de prueba con vectores de posición predefinidos y muestra los resultados de velocidad calculados. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lambert__battin_8cpp_af640c31a6218218f93e7860b4e8752ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{lambert__battin_8cpp_af640c31a6218218f93e7860b4e8752ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{lambert__battin_8cpp_a871f2625f1aee9cb735e3c6d1ace9506}\label{lambert__battin_8cpp_a871f2625f1aee9cb735e3c6d1ace9506} 
+\index{lambert\_battin.cpp@{lambert\_battin.cpp}!c\_coeffs@{c\_coeffs}}
+\index{c\_coeffs@{c\_coeffs}!lambert\_battin.cpp@{lambert\_battin.cpp}}
+\doxysubsubsection{\texorpdfstring{c\_coeffs}{c\_coeffs}}
+{\footnotesize\ttfamily const std\+::array$<$double, 21$>$ c\+\_\+coeffs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\{}
+\DoxyCodeLine{\ \ \ \ 0.2,}
+\DoxyCodeLine{\ \ \ \ 9.0/35.0,}
+\DoxyCodeLine{\ \ \ \ 16.0/63.0,}
+\DoxyCodeLine{\ \ \ \ 25.0/99.0,}
+\DoxyCodeLine{\ \ \ \ 36.0/143.0,}
+\DoxyCodeLine{\ \ \ \ 49.0/195.0,}
+\DoxyCodeLine{\ \ \ \ 64.0/255.0,}
+\DoxyCodeLine{\ \ \ \ 81.0/323.0,}
+\DoxyCodeLine{\ \ \ \ 100.0/399.0,}
+\DoxyCodeLine{\ \ \ \ 121.0/483.0,}
+\DoxyCodeLine{\ \ \ \ 144.0/575.0,}
+\DoxyCodeLine{\ \ \ \ 169.0/675.0,}
+\DoxyCodeLine{\ \ \ \ 196.0/783.0,}
+\DoxyCodeLine{\ \ \ \ 225.0/899.0,}
+\DoxyCodeLine{\ \ \ \ 256.0/1023.0,}
+\DoxyCodeLine{\ \ \ \ 289.0/1155.0,}
+\DoxyCodeLine{\ \ \ \ 324.0/1295.0,}
+\DoxyCodeLine{\ \ \ \ 361.0/1443.0,}
+\DoxyCodeLine{\ \ \ \ 400.0/1599.0,}
+\DoxyCodeLine{\ \ \ \ 441.0/1763.0,}
+\DoxyCodeLine{\ \ \ \ 484.0/1935.0}
+\DoxyCodeLine{\}\}}
+
+\end{DoxyCode}
+
+
+Coeficientes c para la serie de Battin. 
+
+\Hypertarget{lambert__battin_8cpp_a1c410b70f0ed4f75e88e5c7be5e3b214}\label{lambert__battin_8cpp_a1c410b70f0ed4f75e88e5c7be5e3b214} 
+\index{lambert\_battin.cpp@{lambert\_battin.cpp}!d\_coeffs@{d\_coeffs}}
+\index{d\_coeffs@{d\_coeffs}!lambert\_battin.cpp@{lambert\_battin.cpp}}
+\doxysubsubsection{\texorpdfstring{d\_coeffs}{d\_coeffs}}
+{\footnotesize\ttfamily const std\+::array$<$double, 21$>$ d\+\_\+coeffs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\{}
+\DoxyCodeLine{\ \ \ \ 1.0/3.0,}
+\DoxyCodeLine{\ \ \ \ 4.0/27.0,}
+\DoxyCodeLine{\ \ \ \ 8.0/27.0,}
+\DoxyCodeLine{\ \ \ \ 2.0/9.0,}
+\DoxyCodeLine{\ \ \ \ 22.0/81.0,}
+\DoxyCodeLine{\ \ \ \ 208.0/891.0,}
+\DoxyCodeLine{\ \ \ \ 340.0/1287.0,}
+\DoxyCodeLine{\ \ \ \ 418.0/1755.0,}
+\DoxyCodeLine{\ \ \ \ 598.0/2295.0,}
+\DoxyCodeLine{\ \ \ \ 700.0/2907.0,}
+\DoxyCodeLine{\ \ \ \ 928.0/3591.0,}
+\DoxyCodeLine{\ \ \ \ 1054.0/4347.0,}
+\DoxyCodeLine{\ \ \ \ 1330.0/5175.0,}
+\DoxyCodeLine{\ \ \ \ 1480.0/6075.0,}
+\DoxyCodeLine{\ \ \ \ 1804.0/7047.0,}
+\DoxyCodeLine{\ \ \ \ 1978.0/8091.0,}
+\DoxyCodeLine{\ \ \ \ 2350.0/9207.0,}
+\DoxyCodeLine{\ \ \ \ 2548.0/10395.0,}
+\DoxyCodeLine{\ \ \ \ 2968.0/11655.0,}
+\DoxyCodeLine{\ \ \ \ 3190.0/12987.0,}
+\DoxyCodeLine{\ \ \ \ 3658.0/14391.0}
+\DoxyCodeLine{\}\}}
+
+\end{DoxyCode}
+
+
+Coeficientes d para la serie de Battin. 
+
+\Hypertarget{lambert__battin_8cpp_a6d84780a435a6df73fbc83b7f2aae726}\label{lambert__battin_8cpp_a6d84780a435a6df73fbc83b7f2aae726} 
+\index{lambert\_battin.cpp@{lambert\_battin.cpp}!MU@{MU}}
+\index{MU@{MU}!lambert\_battin.cpp@{lambert\_battin.cpp}}
+\doxysubsubsection{\texorpdfstring{MU}{MU}}
+{\footnotesize\ttfamily constexpr double MU = 3.\+986004418e14\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Constante gravitacional estándar de la Tierra (m³/s²) 
+
+\Hypertarget{lambert__battin_8cpp_a5d77c9de1e9d55ee7d4b489ec69f4c43}\label{lambert__battin_8cpp_a5d77c9de1e9d55ee7d4b489ec69f4c43} 
+\index{lambert\_battin.cpp@{lambert\_battin.cpp}!SMALL@{SMALL}}
+\index{SMALL@{SMALL}!lambert\_battin.cpp@{lambert\_battin.cpp}}
+\doxysubsubsection{\texorpdfstring{SMALL}{SMALL}}
+{\footnotesize\ttfamily constexpr double SMALL = 1.\+0e-\/6\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Valor pequeño para comparaciones numéricas. 
+

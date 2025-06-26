@@ -1,0 +1,19 @@
+<map id="Vector3D::Vector3D" name="Vector3D::Vector3D">
+<area shape="rect" id="Node000001" title="Constructor por defecto, inicializa el vector nulo." alt="" coords="716,104,864,129"/>
+<area shape="rect" id="Node000002" href="$classVector3D.html#af1b13ca0a65eea7431bfbcd96dcacdee" title="Producto cruz entre vectores." alt="" coords="529,5,652,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="758,98,716,71,667,44,638,33,639,28,669,40,719,66,761,94"/>
+<area shape="rect" id="Node000006" href="$classVector3D.html#af893e58e8f5c80bca3a9443210462ffe" title="Multiplicación por escalar." alt="" coords="515,55,666,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="724,103,642,83,643,77,726,98"/>
+<area shape="rect" id="Node000007" href="$classVector3D.html#ae5153e5e26852627ccea88d399e13c6e" title="Suma de vectores." alt="" coords="513,104,668,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="702,119,668,119,668,114,702,114"/>
+<area shape="rect" id="Node000008" href="$classVector3D.html#a2d77fde2d4f484a639cb4dfd500c3540" title="Resta de vectores." alt="" coords="516,153,665,179"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="726,135,643,156,642,151,724,130"/>
+<area shape="rect" id="Node000009" href="$classVector3D.html#a78433674da73921ee1fd7e32670b1f69" title="División por escalar." alt="" coords="517,203,665,228"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="761,139,718,166,669,192,637,205,635,200,667,188,716,162,758,135"/>
+<area shape="rect" id="Node000003" href="$classLambertBattin.html#a47fff27d3fe1f2fcc683589ccffe5cc2" title="Resuelve el problema de Lambert&#45;Battin." alt="" coords="307,5,465,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="516,21,466,21,466,15,516,15"/>
+<area shape="rect" id="Node000004" href="$lambert__battin_8cpp.html#af640c31a6218218f93e7860b4e8752ed" title="Función de prueba para la implementación de Lambert&#45;Battin." alt="" coords="108,5,259,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="293,21,259,21,259,15,293,15"/>
+<area shape="rect" id="Node000005" href="$lambert__battin_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa." alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
