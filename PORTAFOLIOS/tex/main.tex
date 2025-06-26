@@ -1,0 +1,1064 @@
+\documentclass[12pt,a4paper]{article}
+
+% Configuración basica
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[margin=2.5cm]{geometry}
+
+% Librería de markdown (version minima)
+\usepackage{markdown}
+
+% Paquetes adicionales 
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{tcolorbox}
+\onehalfspacing
+
+% Configuración de colores
+\definecolor{codeblue}{RGB}{42, 161, 152}
+\definecolor{codegray}{RGB}{128, 128, 128}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+
+% Configuración de markdown
+\markdownSetup{
+    shiftHeadings = 1,
+    rendererPrototypes = {
+        link = {\href{#2}{#1}},
+        emphasis = {\emph{#1}},
+        strongEmphasis = {\textbf{#1}},
+        % image = {\begin{center}\includegraphics[width=0.8\textwidth]{#2}\end{center}},
+        image = {\begin{figure}[H]\centering\includegraphics[width=0.8\textwidth]{#2}\caption{#1}\end{figure}},
+        codeSpan = {\texttt{#1}},
+    },
+    fencedCode = true,
+    fencedCodeAttributes = true,
+    blankBeforeCodeFence = true,
+    pipeTables = true,
+    tableCaptions = true,
+}
+
+
+% Configuración para código
+\lstset{
+    backgroundcolor=\color{lightgray},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{codegray},
+    frame=single,
+    keepspaces=true,
+    keywordstyle=\color{codeblue},
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{codegray},
+    rulecolor=\color{black},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stepnumber=1,
+    stringstyle=\color{red},
+    tabsize=2
+}
+
+% Configuración de cajas para destacar contenido
+\newtcolorbox{infobox}[1][Información]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    title=#1,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{warningbox}[1][Advertencia]{
+    colback=orange!5!white,
+    colframe=orange!75!black,
+    title=#1,
+    fonttitle=\bfseries
+}
+
+% Configuración de encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{Portafolios Recopilatorio - Taller Transversal I}
+
+% Configuración de títulos de sección
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{blue!70!black}}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{blue!50!black}}
+{\thesubsection}{1em}{}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=red
+}
+
+% Comando personalizado para separar secciones
+\newcommand{\separadorseccion}{%
+    \vspace{1em}
+    \hrule
+    \vspace{1em}
+}
+
+\title{Portafolios Taller Transversal I}
+\author{Ekaitz Arriola Garcia}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+
+
+
+% INTRODUCCION
+\section{Introducción}
+
+En este portafolios se recopilan las tareas realizadas durante el curso, indicando cada tarea junto a su estimacion de tiempo y tiempo necesitado para realizarlo.
+
+Junto a este portafolios estaran adjuntos los recursos nombrados durante las practicas.
+
+Tambien accesibles desde \href{https://github.com/Ekaitz723/tallerTraversal1/}{Github}.
+
+\separadorseccion
+
+% P1
+\section{Practica I}
+
+\subsection{Criterios para Evaluar Código Fuente}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir criterios que seguir para analizar el código & 5 minutos & 15 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en busqueda de datos en internet.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P1/criteriosAnalisisCodigo.md}
+
+\subsection{SGP4DC}
+SGP4DC es un código de correcciones diferenciales que utiliza el modelo de propagación analítica SGP4 para el refinamiento orbital. Implementa técnicas de ajuste por mínimos cuadrados usando descomposición de valores singulares (SVD) para mejorar la precisión de los elementos orbitales TLE mediante observaciones reales.
+
+\subsection{Informe crítico sobre el código SGP4DC}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Redactar informe critico & 90 minutos & 125 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en sintexis de información recopilada y redacción de informes.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P1/informeCritico.md}
+
+\subsection{Mejoras necesarias en el código}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Enumerar mejoras necesarias & 15 minutos & 30 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en analisis de código.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P1/accionesParaMejora.md}
+
+
+\subsection{Informe de compilacion del codigo SGP4DC}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Documentar intento de compilación & 10 minutos & 45 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa.
+        \newline
+        Tiempo real notablemente diferente al tiempo estimado debido a no recordar como se compilaba... Ya se, debería saber compilar eso como respirar a este punto, pero se me olvidó.
+    \end{center}
+% }
+
+\markdownSetup{shiftHeadings = 1}
+% \markdownInput{../P1/analisis_compilacion.md}
+\begin{markdown}
+
+## **Constructor de Vector Bidimensional Inválido (Error Principal)**
+
+Este es el error más crítico y frecuente en toda la base de código. Aparece unas 20-30 veces entre múltiples archivos:
+
+\end{markdown}
+
+\begin{lstlisting}[language=C++]
+    astiod.cpp:195:48: error: no matching function for call to 'std::vector<std::vector<double> >::vector(int, int)'
+    195 |   std::vector< std::vector<double> > lmatii(3,3), cmat(3,3), rhomat(3,3),
+        |                                                ^
+\end{lstlisting}
+\begin{lstlisting}[language=C++]
+    astmath.cpp:1015:60: error: no matching function for call to 'std::vector<std::vector<double> >::vector(int, int)'
+    1015 |       std::vector< std::vector<double> > lu(order+1,order+1);
+         |                                        ^
+\end{lstlisting}
+
+El problema radica en que no existe un constructor de `std::vector` que tome dos enteros para crear directamente una matriz. La sintaxis correcta requiere usar `.resize()` o inicialización apropiada.
+
+\begin{markdown}
+## **Headers Faltantes**
+
+Funciones de manipulación de cadenas no están disponibles por falta del header correspondiente:
+\end{markdown}
+
+\begin{lstlisting}[language=C++]
+asttime.cpp:46:6: error: 'strcpy' was not declared in this scope
+46 |      strcpy(monstr[1], "Jan");
+    |      ^~~~~~
+asttime.cpp:33:1: note: 'strcpy' is defined in header '<cstring>'; did you forget to '#include <cstring>'?
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++]
+asttime.cpp:60:14: error: 'strcmp' was not declared in this scope
+60 |      while ((strcmp(instr, monstr[ktr])!=0) && (ktr <=12))
+    |    
+\end{lstlisting}
+
+La solución es agregar `\#include <cstring>` en `asttime.cpp`.
+
+
+\begin{markdown}
+## **Variables No Declaradas**
+
+Variables específicas del sistema que no están definidas en el contexto actual:
+    
+\end{markdown}
+
+\begin{lstlisting}[language=C++]
+testdc.cpp:58:24: error: '_argc' was not declared in this scope
+58 |    cout << "argc= " << _argc << endl;
+    |                        ^~~~~
+testdc.cpp:61:15: error: '_argv' was not declared in this scope
+61 |       cout << _argv[i] << endl;
+    |               ^~~~~
+\end{lstlisting}
+
+Probablemente faltan includes específicos del sistema o estas variables necesitan ser definidas de manera diferente.
+
+
+
+\begin{markdown}
+## **Directivas de Preprocesador Malformadas**
+
+Token extra al final de la directiva include:
+\end{markdown}
+
+\begin{lstlisting}[language=C++]
+sgp4dc.h:37:75: warning: extra tokens at end of #include directive
+37 | #include "astiod.h"                                                       `
+    |                                                                           ^
+\end{lstlisting}
+
+Hay un carácter backtick (\`) innecesario al final de la línea que causa el warning.
+
+
+\begin{markdown}
+## **Errores de Switch-Case**
+
+Sintaxis incorrecta en declaración de casos múltiples:
+\end{markdown}
+
+\begin{lstlisting}[language=C++]
+sgp4dc.cpp:817:16: error: expected ':' before ',' token
+817 |          case 1,3 : indobs= 2;
+    |                ^
+    |                :
+sgp4dc.cpp:817:16: error: expected primary-expression before ',' token
+\end{lstlisting}
+
+La sintaxis `case 1,3:` es inválida. Debería ser `case 1: case 3:` para casos múltiples.
+
+
+\begin{markdown}
+## **Shadowing de Variables**
+
+Variables locales que ocultan parámetros de función:
+\end{markdown}
+
+\begin{lstlisting}[language=C++]
+coordfk5.cpp:375:15: error: declaration of 'double rpef [3]' shadows a parameter
+375 |               rpef[3], vpef[3], apef[3], omgxv[3], tempvec1[3], tempvec[3];
+    |               ^~~~
+coordfk5.cpp:357:15: note: 'double* rpef' previously declared here
+357 |        double rpef[3], double vpef[3], double apef[3],
+    |        ~~~~~~~^~~~~~~
+\end{lstlisting}
+
+Se están redeclarando variables que ya existen como parámetros de la función.
+
+
+\begin{markdown}
+## **Warnings de Formato**
+
+Inconsistencias entre especificadores de formato y tipos de datos:
+\end{markdown}
+
+\begin{lstlisting}[language=C++]
+testdc.cpp:257:52: warning: format '%d' expects argument of type 'int*', but argument 4 has type 'long int*' [-Wformat=]
+257 |                               sscanf(longstr2,"%d %d %d %d %d %d %d %d %lf ",
+    |                                                   ~^
+    |                                                    |
+    |                                                    int*
+    |                                                   %ld
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++]
+testdc.cpp:1163:37: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+1163 |                fprintf(outfile1," %8d  difference %11lf  %11lf  %11lf km %12lf m \n\n",satrec.satnum, dr[0], dr[1], dr[2], 1000.0 * mag(dr) );
+        |                                   ~~^                                                  ~~~~~~~~~~~~~
+        |                                     |                                                         |
+        |                                     int                                                       long int
+\end{lstlisting}
+
+El especificador \%d espera int pero recibe long int. Debería usarse \%ld.
+
+
+\separadorseccion
+
+
+% P2
+\section{Practica II}
+
+
+\subsection{Clasificación de lenguajes de programación}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Investigación y clasificación de lenguajes de programación & 30 minutos & 55 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en investigación y sintexis de información.
+    \end{center}
+% }
+\subsubsection{Clasificación}
+\markdownSetup{shiftHeadings = 3}
+\markdownInput{../P2/lenguajesProgramacion.md}
+\markdownSetup{shiftHeadings = 2}
+\markdownInput{../P2/criteriosSeleccionLenguajesPRogramacion.md}
+
+
+\subsection{Evaluación de GraalVM}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Evaluación de GraalVM & 60 minutos & 240 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+        \newline
+        Tiempo real notablemente diferente al tiempo estimado debido a problemas tecnicos
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P2/evaluacionGraalVM.md}
+
+
+\subsection{QuickSort en diferentes lenguajes de programación}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Implementación de QuickSort en diferentes \\ lenguajes de programación & 15 minutos & 10 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+
+Se implemento Quicksort en C, Cpp, java y python. Se encuentran adjuntos dentro de "P2\_quicksort\/".
+
+
+\subsection{Eficiencia de Quicksort en diferentes lenguajes de programación (version nativa y manual)}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Evaluación y comparación de la eficiencia del 
+\\ algoritmo en diferentes lenguajes de 
+\\ programación & 30 minutos & 50 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Ampliar comparación con versiones nativas del 
+\\Quicksort en los diferentes lenguajes de 
+\\programación & 10 minutos & 25 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Se evaluará dicha eficiencia en C, Cpp, java y python.
+\newline
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P2/resultadosEficienciaQuicksort.md}
+
+
+\subsection{Definir y justificar criterios para analizar el código Lambert Battin}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir y justificar criterios para \\analizar el código [ya hecho en practica 1] & 5 minutos & 1 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado casi nulo, tarea reutilizada de P1.
+    \end{center}
+% }
+
+
+\subsection{Informe crítico Lambert Battin}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Redactar informe critico & 90 minutos & 40 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Usando los mismos criterios de la practica anterior, se forma el informe critico de dicho código
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P2/informeCriticoLambertBattin.md}
+
+
+\separadorseccion
+
+% P3
+\section{Practica III}
+
+\subsection{Traducción del código Lambert Battin}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Traducir en diferentes lenguajes de 
+\\programación el código de Lambert & 45 minutos & 35 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Código Lambert Battin traducido en C y Python, adjunto en "P3\_lambertTraduccion\/".
+
+\subsection{Lenguajes compilados e interpretados}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Identificar los elementos básicos que 
+\\caracterizan a los lenguajes de programación 
+\\compilados e interpretados, ejemplificándolos 
+\\con C++ y Python, respectivamente & 20 minutos & 15 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P3/lambertTraduccion/compiladosEInterpretados.md}
+
+
+
+\subsection{Criterios para analizar editores de texto}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir y justificar criterios para analizar 
+\\editores de texto y entornos de desarrollo 
+\\(IDE), y los objetivos a conseguir & 15 minutos & 25 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P3/criteriosAnalisisIDE.md}
+
+
+
+\subsection{Análisis de Editores de Texto e IDEs para Desarrollo en C/C++ y Python}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Seleccionar e instalar los editores de texto e 
+IDE & 10 minutos & \href{https://www.youtube.com/watch?v=DXzctTjb7DM}{55 minutos} \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+        \newline
+        Tiempo real notablemente diferente al tiempo estimado debido a problemas de internet.
+    \end{center}
+% }
+Se seleccionaron Vim, Notepad++, y Visual Studio Code.
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Redactar análisis sobre los editores de texto e IDE & 60 minutos & 55 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Sintetizar en una tabla el análisis realizado 
+\\sobre los editores de texto y IDE e integrarlo al 
+\\inicio del análisis & 30 minutos & 15 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Instalar, compilar y ejecutar el código 
+\\disponible en el aula virtual (codigo.zip) 
+\\usando diferentes compiladores de C y C++. 
+\\Anotar y añadir al análisis & 20 minutos & 65 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+        \newline
+        Tiempo real notablemente diferente al tiempo estimado debido a problemas tecnicos
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P3/informeAnalisisIDE.md}
+
+
+\separadorseccion
+
+
+% P4
+\section{Practica IV}
+\subsection{Selección de Analizadores}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir criterios de selección de analizadores\\ de código para el análisis & 5 minutos & 1 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Selección de analizadores de código & 15 minutos & 5 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Se seleccionaron arbitrariamente Cppcheck y PVS-Studio.
+
+\subsection{Criterios de Selección de Analizadores de Código Estático}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Instalar y configurar analizadores de código & 10 minutos & 20 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir y justificar criterios para el análisis y
+\\evaluación de los analizadores de código selec-
+\\cionados & 20 minutos & 10 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P4/criteriosAnalisisAnalizadores.md}
+
+\subsection{Análisis Comparativo de Analizadores de Código Estático: PVS-Studio vs Cppcheck}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Crear informe que recoja las funcionalidades y
+\\análisis de los analizadores de código seleccionados & 60 minutos & 85 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P4/analizadoresdecodigo.md}
+
+
+
+\separadorseccion
+
+
+% P5
+\section{Practica V}
+\subsection{Herramientas de pruebas de software}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir criterios para selección de herramientas
+\\para realizar pruebas de software & 5 minutos & 1 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Seleccione assert.h y CppTest ya que son las unicas que no llevan desde que entre en primaria sin actualizarse.
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Instalar herramientas de pruebas de software 
+\\seleccionadas en base a los criterios definidos, e
+\\indicarlas & 5 minutos & 10 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Se instalaron con un apt-get y el otro es librería estándar.
+
+\subsection{Criterios de Evaluación para Herramientas de Testing de Software}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir criterios de evaluación y analisis de
+\\las caracteristicas de las herramientas para 
+\\realizar pruebas de software & 5 minutos & 10 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P5/criteriosEvalPruebasSW.md}
+
+
+\subsection{Análisis Comparativo de Herramientas de Testing de Software (assert.h . CppTest)}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Crear un informe que recoja las funcionali-
+\\dades y analisis de las herramientas, basandose
+\\en los criterios definidos  & 45 minutos & 25 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            *Reescribir* el test del proyecto Lam-
+\\bert usando las herramientas seleccionadas & 10 minutos & 20 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+El código reescrito usando las herramientas seleccionadas del test del proyecto Lambert esta adjunto en "P5\_testProyectoLambert\/".
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Actualizar el informe una vez utilizados con el
+\\proyecto Lamber & 15 minutos & 10 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P5/informeHerramientasPruebaSW.md}
+
+
+
+\separadorseccion
+
+
+% P6
+\section{Practica VI}
+\subsection{Lectura de la guía de estilo e investigar sistemas de documentación}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Leer la guía de estilo & 5 minutos & 5 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            No leer la guía de estilo pero no hacer nada más
+\\porque debo de leer la guía de estilo (cuenta
+\\como descanso) & 30 minutos & 10 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Leer la guía de estilo por encima & 15 minutos & 10 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Investigar Doxygen & 10 minutos & 15 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Investigo sobre todo Doxygen ya que es el que usaré con el codigo de lambert\_batting.cpp.
+
+\subsection{Criterios de Evaluación para Sistemas de Documentación}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Definir criterios de evaluación y análisis de las
+\\características de los sistemas de documentación & 15 minutos & 15 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P6/criteriosAnalisisSistemasDocumentacion.md}
+
+
+\subsection{Evaluación de Sistemas de Documentación: Doxygen vs JavaDoc}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Evaluar y analizar las características de
+\\los sistemas de documentación seleccionados & 45 minutos & 25 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P6/analisisSistemasDocumentacion.md}
+
+
+\subsection{Documentación del código Cpp del proyecto Lambert}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Documentar el código C++ del proyecto Lamber
+\\utilizando Doxygen & 45 minutos & 60 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+        \newline
+        Tiempo real notablemente diferente al tiempo estimado debido a tener que realizarlo de forma pausada.
+    \end{center}
+% }
+Documenté dicho código utilizando Doxygen. El código y documentación generada esta adjunto en "P6\_lambert\/". 
+
+% ANALIZADO HASTA ACAAAAAAAA
+
+
+\separadorseccion
+
+% P7
+\section{Proyecto VII}
+\subsection{Criterios de Evaluación para Herramientas de Análisis de Rendimiento}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Determinar los criterios que se seguirán para re-
+\\alizar dicha evaluación & 15 minutos & 20 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P7/criteriosEvalAppAnalaisisRendimiento.md}
+\subsection{Análisis de Herramientas de Análisis de Rendimiento}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Evaluar las características y funcionalidades de
+\\las aplicaciones según los criterios definidos & 45 minutos & 60 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Realizar una comparación entre las herramien-
+\\tas de análisis dinámico, recogiendo los re-
+\\sultados en una tabla  & 20 minutos & 45 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Añado tabla comparativa entre Valgrind y Gprof.
+\markdownSetup{shiftHeadings = 1}
+\markdownInput{../P7/evaluacionAppAnalisisRendimiento.md}
+
+\subsection{Análisis de Lambert Battin}
+% Tiempo estimado {
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Tarea} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+            \hline
+            Usar las herramientas para analizar un ejemplo
+\\previo. Adjunta los resultados & 20 minutos & 35 minutos \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Tiempo estimado basado en experiencia previa en tareas similares.
+    \end{center}
+% }
+Para el análisis del código se usó gprof y valgrind. Los resultados de los análisis completos se encuentran en "P7\_valgrind\_gprof\/".
+
+\markdownSetup{shiftHeadings = 2}
+\markdownInput{../P7/valgrindresults/analisisvalgrind.md}
+
+\markdownSetup{shiftHeadings = 2}
+\markdownInput{../P7/gprofresults/analisisgprof.md}
+
+
+
+\end{document}
