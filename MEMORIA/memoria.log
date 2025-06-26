@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.24)  26 JUN 2025 23:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.24)  27 JUN 2025 00:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -840,14 +840,144 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--137
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
+[]\T1/cmr/m/n/12 zeros(row, co-
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 166--166
+[]\T1/cmr/m/n/12 operator - (Ma-
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 168--168
+[]\T1/cmr/m/n/12 operator  (Ma-
+ []
+
+
+Overfull \hbox (7.76616pt too wide) in paragraph at lines 178--178
+[]\T1/cmr/m/n/12 transpose(Matrix)| 
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 184--184
+[]\T1/cmr/m/n/12 Matrix(row, co-
+ []
+
+
+Overfull \hbox (22.6687pt too wide) in paragraph at lines 158--201
+ [] 
+ []
+
+LaTeX Info: Redefining \. on input line 201.
+LaTeX Info: Redefining \% on input line 201.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[2]
+Overfull \vbox (33.39218pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 201.
+LaTeX Info: Redefining \% on input line 201.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+Overfull \hbox (22.6687pt too wide) in paragraph at lines 205--242
+ [] 
+ []
+
+
+Overfull \hbox (22.6687pt too wide) in paragraph at lines 246--275
+ [] 
+ []
+
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
+Overfull \hbox (9.9115pt too wide) in paragraph at lines 296--296
+[]\T1/cmr/m/n/12 JPL_Eph_DE430| 
+ []
+
+
+Overfull \hbox (22.6687pt too wide) in paragraph at lines 280--309
+ [] 
+ []
+
+LaTeX Info: Redefining \. on input line 309.
+LaTeX Info: Redefining \% on input line 309.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5]
+Overfull \hbox (10.32246pt too wide) in paragraph at lines 322--322
+[]\T1/cmr/m/n/12 G_AccelHarmonic| 
+ []
+
+
+Overfull \hbox (22.6687pt too wide) in paragraph at lines 312--338
+ [] 
+ []
+
+LaTeX Info: Redefining \. on input line 338.
+LaTeX Info: Redefining \% on input line 338.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6]
+Overfull \hbox (22.6687pt too wide) in paragraph at lines 343--366
+ [] 
+ []
+
+LaTeX Info: Redefining \. on input line 366.
+LaTeX Info: Redefining \% on input line 366.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7]
 \openout3 = `memoria.markdown.in'.
 
 Package markdown Info: Buffering markdown input into the temporary input file "
 memoria.markdown.in" and scanning for the closing token sequence "\end{markdown
-}" on input line 158.
-Package markdown Info: The ending token sequence was found on input line 192.
+}" on input line 404.
+Package markdown Info: The ending token sequence was found on input line 438.
 Package markdown Info: Including markdown document "./memoria.markdown.in" on i
-nput line 192.
+nput line 438.
 \g_tmpa_iow=\write9
 \openout9 = `memoria.markdown.lua'.
 
@@ -859,10 +989,27 @@ Package luabridge Info: Writing a helper Lua script to file
 Package luabridge Info: Executing a helper Lua script from file
 (luabridge)             \markdownOptionHelperScriptFileName 
 
-(|texlua ./memoria.markdown.lua)
+ (|texlua ./memoria.markdown.lua)
 (./_markdown_memoria/fd7360252568862b456cd6f7cd826dee.md.tex
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[8]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+5.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+))
+LaTeX Info: Redefining \. on input line 439.
+LaTeX Info: Redefining \% on input line 439.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -872,20 +1019,112 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-5.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-))
-\openout3 = `memoria.markdown.in'.
+[9]
+Package markdown Info: Including markdown document "test.md" on input line 444.
 
-Package markdown Info: Buffering markdown input into the temporary input file "
-memoria.markdown.in" and scanning for the closing token sequence "\end{markdown
-}" on input line 218.
-Package markdown Info: The ending token sequence was found on input line 284.
-Package markdown Info: Including markdown document "./memoria.markdown.in" on i
-nput line 284.
+\openout9 = `memoria.markdown.lua'.
+
+
+Package luabridge Info: Writing a helper Lua script to file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+
+Package luabridge Info: Executing a helper Lua script from file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+ (|texlua ./memoria.markdown.lua)
+(./_markdown_memoria/5bd8a8e0645af5e7ecedd76ccee48c20.md.tex)
+LaTeX Info: Redefining \. on input line 461.
+LaTeX Info: Redefining \% on input line 461.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[10]
+Package markdown Info: Including markdown document "informeCppcheck.md" on inpu
+t line 472.
+\openout9 = `memoria.markdown.lua'.
+
+
+Package luabridge Info: Writing a helper Lua script to file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+
+Package luabridge Info: Executing a helper Lua script from file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+ (|texlua ./memoria.markdown.lua)
+(./_markdown_memoria/71ccff4844e74187180dc092f0d04ef4.md.tex
+Overfull \hbox (7.15367pt too wide) in paragraph at lines 20--21
+[]\T1/cmr/bx/n/12 constVariablePointer \T1/cmr/m/n/12 (EKF\T1/cmr/m/it/12 GEOS3
+\T1/cmr/m/n/12 test.cpp:271): Pun-te-ro \T1/cmtt/m/n/12 results \T1/cmr/m/n/12 
+pue-de ser const 
+ []
+
+
+Overfull \hbox (10.87349pt too wide) in paragraph at lines 27--27
+[]\T1/cmr/bx/n/12 knownConditionTrueFalse (DEIn-teg.cpp:84)\T1/cmr/m/n/12 : Con
+-di-ción Sta-te_ >DE\T1/cmr/m/it/12 INVPARAM
+ []
+
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[11])
+Package markdown Info: Including markdown document "informeGprof.md" on input l
+ine 475.
+\openout9 = `memoria.markdown.lua'.
+
+
+Package luabridge Info: Writing a helper Lua script to file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+
+Package luabridge Info: Executing a helper Lua script from file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+ (|texlua ./memoria.markdown.lua)
+(./_markdown_memoria/45e9194a22ef0806b70cccebd19d33fb.md.tex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 9.
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[12]
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[13{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}])
+Package markdown Info: Including markdown document "informeValgrind.md" on inpu
+t line 478.
 \openout9 = `memoria.markdown.lua'.
 
 
@@ -898,9 +1137,46 @@ Package luabridge Info: Executing a helper Lua script from file
 
 
 (|texlua ./memoria.markdown.lua)
-(./_markdown_memoria/3a0b556c7357274cfa8ccc6a337d72b4.md.tex
-LaTeX Info: Redefining \. on input line 3.
-LaTeX Info: Redefining \% on input line 3.
+(./_markdown_memoria/92be42f70ceb3139b58fa3bc8eb7bd68.md.tex
+Overfull \hbox (37.67671pt too wide) in paragraph at lines 25--26
+[]\T1/cmr/bx/n/12 112 by-tes in-di-rec-ta-men-te per-di-dos: \T1/cmr/m/n/12 8 b
+lo-ques re-la-cio-na-dos con \T1/cmtt/m/n/12 Matrix::initMatrix() 
+ []
+
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[14]
+Overfull \hbox (24.84822pt too wide) in paragraph at lines 45--46
+[]\T1/cmr/m/n/12 Se re-quie-re ins-ta-la-ción de he-rra-mien-tas adi-cio-na-les
+ (\T1/cmtt/m/n/12 callgrind_annotate\T1/cmr/m/n/12 , \T1/cmtt/m/n/12 cg_annotat
+e\T1/cmr/m/n/12 ) 
+ []
+
+)
+Package markdown Info: Including markdown document "configuracionCppcheck.md" o
+n input line 491.
+\openout9 = `memoria.markdown.lua'.
+
+
+Package luabridge Info: Writing a helper Lua script to file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+
+Package luabridge Info: Executing a helper Lua script from file
+(luabridge)             \markdownOptionHelperScriptFileName 
+
+ (|texlua ./memoria.markdown.lua)
+(./_markdown_memoria/68bea8011db41a64fac1c1bad859d605.md.tex
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -910,13 +1186,48 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
-[3]
-Overfull \hbox (24.11194pt too wide) in paragraph at lines 12--12
-\T1/cmr/m/n/12 over-flows y otros pro-ble-mas re-la-cio-na-dos con la ges-tión 
-di-ná-mi-ca de me-mo-ria. \end{enumerate} 
- []
+[15])
+LaTeX Info: Redefining \. on input line 497.
+LaTeX Info: Redefining \% on input line 497.
 
-LaTeX Info: Redefining \. on input line 20.
-LaTeX Info: Redefining \% on input line 20.
 
-Package fancyh
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16] (./memoria.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `memoria.out' has not changed.
+(rerunfilecheck)             Checksum: 77686F3477B7C02D88E55870AEEE8747;3936.
+ ) 
+Here is how much of TeX's memory you used:
+ 26617 strings out of 474222
+ 522772 string characters out of 5748733
+ 1948975 words of memory out of 5000000
+ 48376 multiletter control sequences out of 15000+600000
+ 572047 words of font info for 75 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 82i,12n,92p,871b,949s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+
+Output written on memoria.pdf (16 pages, 220643 bytes).
+PDF statistics:
+ 241 PDF objects out of 1000 (max. 8388607)
+ 203 compressed objects within 3 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+

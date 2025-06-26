@@ -1,0 +1,7 @@
+El proyecto implementa un framework de testing robusto para validar la correcta migración desde MATLAB. Cada función traducida incluye tests unitarios exhaustivos que verifican múltiples escenarios:
+
+**Tests unitarios**: Se declaran directamente en el mismo archivo .cpp de cada función, validando casos típicos (órbitas LEO, GEO, elípticas), casos límite (vectores colineales, magnitudes extremas) y verificación de propiedades físicas (conservación de energía, perpendicularidad en órbitas circulares). Se utilizan assertions con tolerancias numéricas apropiadas para comparar resultados contra valores de referencia conocidos. El framework utiliza macros REGISTER\_TEST para ejecutar automáticamente todos los tests.
+
+**Tests de integración**: Verifican el comportamiento de sistemas completos como EKF\_GEOS3\_test, que valida la implementación completa del filtro de Kalman extendido aplicado al satelite GEOS3, integrando determinación orbital, propagación y estimación de estados. También incluyen funciones compuestas como anglesg, que combina transformaciones de coordenadas, el método de Gibbs y cálculos iterativos. Estos tests detectan la propagación de errores a través de la cadena de dependencias y validan que los resultados finales coincidan con los obtenidos en MATLAB.
+
+La estrategia de testing fue fundamental para detectar errores sutiles causados por diferencias entre MATLAB y C++ en precisión numérica y manejo de casos especiales.

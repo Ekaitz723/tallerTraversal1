@@ -1,65 +1,33 @@
-El proyecto implementa un framework de testing robusto para validar la correcta migración desde MATLAB. Cada función traducida incluye tests unitarios exhaustivos que verifican múltiples escenarios:
+# Problemas y dificultades durante el proyecto
 
-**Tests unitarios**: Se declaran directamente en el mismo archivo .cpp de cada función, validando casos típicos (órbitas LEO, GEO, elípticas), casos límite (vectores colineales, magnitudes extremas) y verificación de propiedades físicas (conservación de energía, perpendicularidad en órbitas circulares). Se utilizan assertions con tolerancias numéricas apropiadas para comparar resultados contra valores de referencia conocidos. El framework utiliza macros \texttt{REGISTER\_TEST} para ejecutar automáticamente todos los tests.
-
-**Tests de integración**: Verifican el comportamiento de sistemas completos como \texttt{EKF\_GEOS3\_test}, que valida la implementación completa del filtro de Kalman extendido aplicado al satelite GEOS3, integrando determinación orbital, propagación y estimación de estados. También incluyen funciones compuestas como \texttt{anglesg}, que combina transformaciones de coordenadas, el método de Gibbs y cálculos iterativos. Estos tests detectan la propagación de errores a través de la cadena de dependencias y validan que los resultados finales coincidan con los obtenidos en MATLAB.
-
-La estrategia de testing fue fundamental para detectar errores sutiles causados por diferencias entre MATLAB y C++ en precisión numérica y manejo de casos especiales.
-\begin{markdown}
+Estos fueron los problemas con más ocurrencias y más mayores dificultades durante la realización del proyecto:
 
 
-\section{Mejoras en el código}
+## **Indexación base-1 vs base-0**:
 
-Para garantizar la calidad y rendimiento de la librería de astrodynamica, se implementó un proceso sistemático de análisis y optimización del código mediante herramientas especializadas de profiling y análisis estático.
+La diferencia de indexación entre MATLAB (base 1) y C++ (base 0) causó errores sutiles pero críticos cuando me despistaba. La clase Matrix funciona en base 1 de indexación, por lo que esos errores me los ahorré, pero en el resto del código tuve que tener cuidado de ello.
 
 
-\subsection{Metodología de análisis}
+## **Orientación de vectores**:
 
-El proceso de mejora se ejecutó en tres fases diferenciadas:
+MATLAB maneja vectores fila y columna de forma implícita, pero en C++ hay que ser explícito. Los problemas de concatenación vertical vs horizontal no fueron muy dificultosos, pero molestaron bastante.
 
-\begin{enumerate}
-\item \textbf{Análisis estático pre-ejecución}: Utilizando CppCheck para identificar problemas potenciales en el código fuente sin necesidad de compilación o ejecución.
 
-\item \textbf{Análisis de rendimiento}: Mediante Gprof para identificar cuellos de botella y patrones de uso de funciones durante la ejecución real del programa.
+## **Propagación silenciosa de errores**:
 
-\item \textbf{Análisis de memoria}: Con Valgrind para detectar memory leaks, buffer overflows y otros problemas relacionados con la gestión dinámica de memoria.
-\end{enumerate}
+El mayor problema fue que al tener funciones que dependen unas de otras (como `anglesg` que llama a `gibbs`, que usa `angl` y `unit`), un pequeño error en una función base se propagaba en cascada a través de toda la cadena de cálculos. Los errores se acumulaban y se manifestaban como resultados aparentemente correctos pero numericamente incorrectos varios niveles arriba, haciendo el debugging extremadamente complejo porque el fallo real estaba enterrado en funciones de bajo nivel. A nivel test unitario, quizas pasaba con mucha permisividad, y el error se va acumulando.
 
-Cada herramienta proporcionó perspectivas complementarias sobre diferentes aspectos del código, permitiendo una evaluación integral de la calidad del software desarrollado.
 
-\subsection{Resultados de los análisis}
+## **Precisión numérica**:
 
-Los informes detallados de cada herramienta se presentan a continuación, incluyendo las métricas específicas, problemas identificados y mejoras implementadas.
+Diferencias mínimas en cálculos de punto flotante entre MATLAB y C++ causaron divergencias en algoritmos iterativos.
 
-% Informes de análisis de código
-\markdownSetup{shiftHeadings = 2}
-\markdownInput{informeCppcheck.md}
 
-\markdownSetup{shiftHeadings = 2}
-\markdownInput{informeGprof.md}
+## **Condiciones de error**:
 
-\markdownSetup{shiftHeadings = 2}
-\markdownInput{informeValgrind.md}
+Las cadenas de error exactas ('          ok' vs 'not coplanar') tenían que coincidir al caracter, incluyendo espacios. Los algoritmos como `gibbs` dependían de estas comparaciones exactas.
 
-\subsection{Impacto de las mejoras}
 
-La aplicación sistemática de estos análisis permitió identificar y resolver issues específicos, resultando en un código más robusto y eficiente que mantiene la precisión numérica requerida.
-\\
-Aún así, fui incapaz de conseguir el valor exacto, habiendo un pequeñisimo error de redondeo que no logro encontrar desde donde ocurre.
+## **Testing y validación**:
 
-\section{Documentacion}
-Para la generación de documentación técnica se utilizó Doxygen.
-La configuración clave del Doxyfile incluyó:
-\begin{center}
-\begin{markdown}
-```
-EXTRACT_ALL = YES
-EXTRACT_PRIVATE = YES
-EXTRACT_STATIC = YES
-SOURCE_BROWSER = YES
-INLINE_SOURCES = YES
-CALL_GRAPH = YES
-CALLER_GRAPH = YES
-CLASS_DIAGRAMS = YES
-COLLABORATION_GRAPH = YES
-```
+Verificar que cada función traducida produjera exactamente los mismos resultados que MATLAB requirió crear casos de prueba exhaustivos y frameworks de comparación robustos.
